@@ -1,0 +1,23 @@
+services:
+  web:
+    image: node:22-slim
+    working_dir: /workspace
+    volumes:
+      - "${BASE44_PROJECT_ROOT}:/workspace"
+      - mod_rules_deps:/workspace/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - BASE44_PREVIEW_MODE=${BASE44_PREVIEW_MODE:-}
+      - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS=${__VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS:-}
+    command: ["sh", "-ec", "npm install && exec npm run dev"]
+    restart: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://localhost:3000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  mod_rules_deps:

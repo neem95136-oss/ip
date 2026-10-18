@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ข้อบังคับการใช้มอด | กองบัญชาการกองทัพไทย</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f7f4f8;--sf:#fff;--tx:#1d1b1b;--mut:#6b6666;--br:#e6e0dc;--ac:#9d1c8c;--acb:#9d1c8c;--cl:#fbf0fa;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141011;--sf:#1f191a;--tx:#f1eceb;--mut:#a89f9e;--br:#372e2f;--ac:#e879d9;--cl:#2a1428}}
+:root[data-theme="dark"]{--bg:#141011;--sf:#1f191a;--tx:#f1eceb;--mut:#a89f9e;--br:#372e2f;--ac:#e879d9;--cl:#2a1428}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:'Sarabun',system-ui,sans-serif;background:var(--bg);color:var(--tx);padding-bottom:78px;-webkit-tap-highlight-color:transparent}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#5e0f55;z-index:10}
+.hd{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:linear-gradient(90deg,#5e0f55,#9d1c8c);color:#fff;display:flex;align-items:center;gap:10px;padding:10px 14px}
+.hd img{width:38px;height:38px;border-radius:50%;background:#fff;object-fit:cover}
+.hd b{font-size:.98rem;line-height:1.2;display:block}.hd small{font-size:.7rem;opacity:.8}
+.sp{flex:1}.ib{width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;font-size:1rem;cursor:pointer}
+.tabs{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--sf);border-top:1px solid var(--br);padding-bottom:env(safe-area-inset-bottom,0px);z-index:60}
+.tabs button{flex:1;border:0;background:none;color:var(--mut);font:inherit;font-size:.64rem;padding:8px 1px 7px;display:flex;flex-direction:column;align-items:center;gap:1px;cursor:pointer}
+.tabs i{font-style:normal;font-size:1.25rem}.tabs .on{color:var(--ac);font-weight:600}
+.page{display:none;max-width:760px;margin:0 auto;padding:16px 14px}.page.active{display:block;animation:pg .25s ease}
+@keyframes pg{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.card{background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:20px 18px;margin-bottom:14px}
+.card h2{font-size:1.1rem;color:var(--ac);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--br)}
+.section{margin-bottom:14px}.section-title{font-weight:700;color:var(--ac);margin-bottom:4px}
+p{line-height:1.75;margin-bottom:8px;font-size:.93rem}ul,ol{padding-left:20px;margin:8px 0}li{margin-bottom:5px;font-size:.92rem}
+.callout{background:var(--cl);border-left:4px solid var(--acb);padding:10px 12px;border-radius:0 10px 10px 0;margin:10px 0}
+.red{color:#dc2626}
+code{background:#1a1a1a;color:#4ade80;padding:2px 7px;border-radius:5px;font-size:.82rem}code.ban{color:#f87171}
+.pill{display:inline-block;background:var(--acb);color:#fff;font-size:.7rem;font-weight:600;padding:1px 8px;border-radius:99px}
+.badge{display:inline-block;background:#dc2626;color:#fff;font-size:.7rem;padding:3px 10px;border-radius:99px;margin-top:6px}
+.date-box{text-align:center;margin:16px 0 4px;color:var(--mut);font-size:.88rem}
+.signature{text-align:right;margin-top:16px;padding-top:10px;border-top:1px solid var(--br)}.signature .name{font-weight:700}.signature .pos{color:var(--mut);font-size:.86rem}
+.note{color:var(--mut);font-style:italic;font-size:.86rem}
+.footer{text-align:center;padding:14px;color:var(--mut);font-size:.78rem}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.tile{background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:14px;text-align:left;font:inherit;color:var(--tx);cursor:pointer}
+.tile b{display:block;font-size:1.7rem;line-height:1.1}.tile span{font-size:.8rem;color:var(--mut)}
+.sb input{width:100%;padding:12px 14px;border:1px solid var(--br);border-radius:12px;background:var(--sf);color:var(--tx);font:inherit;font-size:.95rem;outline:none;margin-bottom:10px}
+.sb input:focus{border-color:var(--acb);box-shadow:0 0 0 3px rgba(157,28,140,.15)}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px}.chip{flex:none;border:1px solid var(--br);background:var(--sf);color:var(--tx);border-radius:99px;padding:5px 13px;font:inherit;font-size:.8rem;cursor:pointer}.chip.on{background:var(--acb);color:#fff;border-color:var(--acb)}
+.cnt{font-size:.78rem;color:var(--mut);margin:2px 2px 8px}.empty{text-align:center;color:var(--mut);padding:24px}
+.it{background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:12px 12px 8px 14px;margin-bottom:9px;display:flex;gap:8px}.it .m{flex:1;min-width:0}
+.cd{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;background:#1a1a1a;color:#4ade80;border:0;padding:5px 10px;border-radius:7px;margin:0 6px 6px 0;cursor:pointer}.cd.b{color:#f87171}.cd:active{transform:scale(.95)}
+.it p{margin:0 0 4px;font-size:.86rem;color:var(--mut);line-height:1.55}
+.tg{display:inline-block;font-size:.66rem;font-weight:700;padding:2px 9px;border-radius:99px;margin-bottom:6px;background:color-mix(in srgb,var(--c) 16%,transparent);color:var(--c)}
+.ok{--c:#16a34a}.hq{--c:#2563eb}.ev{--c:#d97706}.nd{--c:#9333ea}.ck{--c:#0891b2}.hi{--c:#dc2626}
+.st{border:0;background:none;font-size:1.25rem;color:var(--mut);align-self:flex-start;cursor:pointer}.st.on{color:#f59e0b}
+.warn{background:#1a0000;border:2px solid #dc2626;border-radius:12px;color:#fecaca;padding:12px 14px;margin:10px 0;font-size:.9rem;line-height:1.7}.warn b{color:#fff}
+.rs{border-radius:12px;padding:10px 14px;margin-top:8px;font-size:.9rem;font-weight:600;background:color-mix(in srgb,var(--c) 14%,var(--sf));border:1px solid color-mix(in srgb,var(--c) 40%,transparent)}
+.rs small{display:block;font-weight:400;color:var(--mut);margin-top:2px}.rs.no{--c:#dc2626}.rs.nf{--c:#d97706}
+.toast{position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);background:#1a1a1a;color:#fff;padding:9px 18px;border-radius:99px;font-size:.84rem;opacity:0;transition:.25s;z-index:200;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+.it p.why{font-size:.83rem;line-height:1.55;color:var(--tx);border-radius:8px;padding:7px 10px;margin:4px 0 6px;background:color-mix(in srgb,var(--w) 11%,transparent)}.why b{color:var(--w)}.wg{--w:#16a34a}.wr{--w:#dc2626}
+#splash{position:fixed;inset:0;z-index:999;background:radial-gradient(circle at 50% 40%,#9d1c8c,#240a22 75%);color:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;transition:opacity .6s,visibility .6s,transform .6s}
+#splash.hide{opacity:0;visibility:hidden;transform:scale(1.15)}#splash.shake{animation:shk .4s}
+@keyframes shk{20%{transform:translate(-8px,5px)}40%{transform:translate(7px,-6px)}60%{transform:translate(-5px,-3px)}80%{transform:translate(3px,4px)}}
+#fx{position:absolute;inset:0;width:100%;height:100%}
+.scan{position:absolute;left:0;right:0;height:120px;background:linear-gradient(transparent,rgba(255,120,120,.16),transparent);animation:scn 3s linear infinite;pointer-events:none}
+@keyframes scn{from{top:-120px}to{top:100%}}
+.ctr{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 20px}
+.rg{position:relative;width:132px;height:132px;margin-bottom:16px}
+.rg img{position:relative;z-index:1;width:132px;height:132px;border-radius:50%;background:#fff;object-fit:cover;box-shadow:0 0 34px rgba(230,110,230,.6)}
+.rad{position:absolute;inset:-30px;border-radius:50%;background:conic-gradient(rgba(255,255,255,.45),transparent 28%,transparent);border:1.5px dashed rgba(255,255,255,.3);animation:spn 2s linear infinite}
+@keyframes spn{to{transform:rotate(360deg)}}
+.pr{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,255,255,.6);animation:pr 2.4s ease-out infinite}.p2{animation-delay:1.2s}
+@keyframes pr{from{transform:scale(1);opacity:.8}to{transform:scale(2.4);opacity:0}}
+#splash h1{font-size:1.15rem}#splash p{color:rgba(255,255,255,.8);margin:0}
+.msg{min-height:1.4em;color:rgba(255,255,255,.85);font-size:.88rem}
+.pb,.pc{opacity:0;transition:opacity .4s}#splash.run .pb,#splash.run .pc{opacity:1}
+.pb{width:200px;height:4px;background:rgba(255,255,255,.2);border-radius:9px;overflow:hidden;margin-top:8px}.pb i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff6b6b,#fff);transition:width .1s}
+.pc{font-size:.8rem;color:rgba(255,255,255,.65)}
+.btn{margin-top:12px;padding:12px 38px;border:0;border-radius:10px;background:#fff;color:#9d1c8c;font:inherit;font-weight:700;font-size:1rem;cursor:pointer}
+#start{animation:pls 1.4s ease-in-out infinite}@keyframes pls{50%{transform:scale(1.07);box-shadow:0 0 22px rgba(255,255,255,.6)}}
+#enter{opacity:0;pointer-events:none;transition:opacity .4s}#enter.show{opacity:1;pointer-events:auto}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}.flash.go{animation:fl .7s ease-out}@keyframes fl{0%{opacity:.9}100%{opacity:0}}
+.stamp{position:absolute;inset:0;margin:auto;width:170px;height:170px;border:7px solid #9d1c8c;border-radius:50%;color:#9d1c8c;background:#fbe9fa;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:1.6rem;font-weight:800;letter-spacing:3px;opacity:0;pointer-events:none}.stamp small{font-size:.65rem}
+.stamp.slam{animation:sl .6s cubic-bezier(.2,.9,.3,1.1) forwards}
+.stamp.slam::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:4px solid #fff;opacity:0;animation:wv .7s .3s ease-out forwards}
+@keyframes wv{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(3.4)}}
+@keyframes sl{0%{opacity:0;transform:scale(2.4) rotate(-25deg)}60%{opacity:1;transform:scale(.95) rotate(-12deg)}100%{opacity:1;transform:scale(1) rotate(-12deg)}}
+.msgs{display:flex;flex-direction:column;gap:8px;min-height:30vh;margin-bottom:8px}.bub{max-width:90%;padding:10px 13px;border-radius:14px;font-size:.9rem;line-height:1.65;white-space:pre-wrap}.bub.u{align-self:flex-end;background:var(--acb);color:#fff;border-bottom-right-radius:4px}.bub.a{align-self:flex-start;background:var(--sf);border:1px solid var(--br);border-bottom-left-radius:4px}.bub.a small{display:block;color:var(--mut)}
+.cmp{position:sticky;bottom:calc(66px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;background:var(--bg);padding:8px 0}.cmp input,.fm input,.fm select,.fm textarea{width:100%;padding:11px 12px;border:1px solid var(--br);border-radius:10px;background:var(--sf);color:var(--tx);font:inherit;font-size:.92rem}.cmp input{flex:1}
+.pbtn{background:var(--acb);color:#fff;border:0;border-radius:10px;padding:12px;font:inherit;font-weight:700;width:100%;margin-top:12px;cursor:pointer}.cmp .pbtn{width:auto;margin:0;padding:0 20px}
+.row{display:flex;align-items:center;gap:12px;width:100%;background:var(--sf);border:1px solid var(--br);border-radius:14px;padding:14px;margin-bottom:9px;font:inherit;color:var(--tx);text-align:left;cursor:pointer}.row i{font-style:normal;font-size:1.5rem}.row b{display:block}.row small{color:var(--mut)}
+.fm label{display:block;font-size:.82rem;color:var(--mut);margin:10px 0 4px}.tk{white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace;font-size:.8rem;line-height:1.7;border:2px dashed var(--acb);border-radius:12px;padding:14px;margin-top:12px;background:var(--cl)}
+.gauge{display:flex;gap:4px;margin:12px 0}.gv{flex:1;text-align:center;font-size:.66rem;font-weight:700;padding:10px 0;border-radius:8px;background:var(--br);color:var(--mut)}.gv.on{color:#fff}.gv.g0{background:#16a34a}.gv.g1{background:#ca8a04}.gv.g2{background:#ea580c}.gv.g3{background:#dc2626}.gv.g4{background:#7f1d1d}
+.hd{background:var(--sf);color:var(--tx);border-bottom:1px solid var(--br)}.hd small{color:var(--mut)}.ib{background:var(--bg);color:var(--tx)}.hd .mb{background:var(--acb);color:#fff;border-radius:10px;width:42px;height:42px;font-size:1.3rem}body::before{background:var(--sf)}
+.dr{position:fixed;top:0;left:0;bottom:0;width:min(84vw,330px);background:var(--sf);z-index:300;transform:translateX(-102%);transition:transform .28s;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);overflow:auto;box-shadow:4px 0 24px rgba(0,0,0,.25)}.dro .dr{transform:none}.scrim{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.28s;z-index:290}.dro .scrim{opacity:1;pointer-events:auto}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--br)}.dl{display:flex;gap:10px;align-items:center;width:100%;border:0;background:none;color:var(--tx);font:inherit;padding:13px 18px;text-align:left;cursor:pointer;border-bottom:1px solid var(--br)}.dl:active{background:var(--bg)}.dg{font-size:.72rem;color:var(--mut);padding:12px 18px 4px}
+.hero{position:relative;height:190px;border-radius:18px;overflow:hidden}.sl{position:absolute;inset:0;padding:20px;display:flex;flex-direction:column;justify-content:center;gap:6px;background:linear-gradient(120deg,color-mix(in srgb,var(--acb) 16%,var(--sf)),color-mix(in srgb,#7c3aed 20%,var(--sf)));opacity:0;transition:opacity .6s;pointer-events:none}.sl.on{opacity:1;pointer-events:auto}
+.sl h3{font-size:1.25rem;max-width:62%;line-height:1.3}.sl p{max-width:62%;font-size:.82rem;margin:0;color:var(--mut)}.sl .em{position:absolute;right:14px;bottom:10px;font-size:5rem}.sl button{align-self:flex-start;border:0;border-radius:99px;background:var(--acb);color:#fff;padding:8px 18px;font:inherit;font-size:.82rem;cursor:pointer}
+.dots{display:flex;gap:8px;justify-content:center;margin:10px 0}.dots i{width:12px;height:12px;border-radius:9px;background:var(--br);transition:.3s;display:block;cursor:pointer}.dots i.on{width:36px;background:var(--acb)}
+.big{font-size:1.7rem;line-height:1.3;font-weight:700;margin:18px 2px 14px}.chips.pls{flex-wrap:wrap;overflow:visible}.pls .chip{padding:9px 18px;font-size:.88rem;border-color:var(--acb);color:var(--acb);background:transparent}.pls .chip.on{background:var(--acb);color:#fff}
+.trk{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;scrollbar-width:none}.trk::-webkit-scrollbar{display:none}.sc{flex:0 0 78%;max-width:340px;scroll-snap-align:start;border:0;background:var(--sf);border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,.1);overflow:hidden;text-align:left;font:inherit;color:var(--tx);cursor:pointer}
+.sc .im{height:130px;display:flex;align-items:center;justify-content:center;font-size:3.6rem;background:linear-gradient(135deg,color-mix(in srgb,var(--acb) 14%,var(--sf)),color-mix(in srgb,#7c3aed 18%,var(--sf)))}.sc .tx{padding:14px 16px 16px}.sc b{display:block;font-size:1.05rem;margin-bottom:4px}.sc p{font-size:.84rem;color:var(--mut);margin:0 0 8px}.sc em{font-style:normal;font-size:.76rem;color:var(--ac);font-weight:600}
+.nv{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.nv .dots{margin:0}.ar{width:40px;height:40px;border-radius:50%;border:1px solid var(--br);background:var(--sf);color:var(--tx);font-size:1.2rem;margin-left:8px;cursor:pointer}
+.purpose{background:color-mix(in srgb,var(--acb) 9%,var(--sf));border:1px solid color-mix(in srgb,var(--acb) 25%,transparent);border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:.84rem;line-height:1.6}.purpose b{display:block;color:var(--ac);margin-bottom:2px}
+.ql{font-size:.75rem;color:var(--mut);margin:6px 2px 2px}#sg{flex:0 0 100%;padding:0}#sg:empty{display:none}.cmp{flex-wrap:wrap}
+.ck{position:fixed;left:10px;right:10px;bottom:calc(72px + env(safe-area-inset-bottom,0px));background:var(--sf);border:1px solid var(--br);border-radius:16px;padding:16px;box-shadow:0 8px 30px rgba(0,0,0,.25);z-index:150;display:none}.ck.show{display:block}.ck b{display:block;margin-bottom:4px}.ck p{font-size:.82rem;color:var(--mut);margin-bottom:10px}.cb2{display:flex;gap:8px;justify-content:flex-end}.cb2 .pbtn{width:auto;margin:0;padding:9px 20px;border-radius:99px}
+.rsv{position:absolute;inset:-14px;width:160px;height:160px;transform:rotate(-90deg);z-index:2}.rsv circle{fill:none;stroke-width:5}.rsv .tr{stroke:rgba(255,255,255,.2)}.rsv .pg{stroke:#fff;stroke-linecap:round;stroke-dasharray:465;stroke-dashoffset:465;transition:stroke-dashoffset .1s}
+.stp{list-style:none;text-align:left;font-size:.82rem;color:rgba(255,255,255,.5);margin-top:4px;opacity:0;transition:opacity .4s}#splash.run .stp{opacity:1}.stp li::before{content:"○ "}.stp li.done{color:#fff}.stp li.done::before{content:"✓ ";color:#7CFFB2}
+#skip{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:14px;z-index:5;background:rgba(255,255,255,.18);color:#fff;border:0;border-radius:99px;padding:7px 16px;font:inherit;font-size:.82rem;cursor:pointer}
+</style>
+</head>
+<body>
+<div id="splash"><canvas id="fx"></canvas><div class="scan"></div><button id="skip">ข้าม ›</button><div class="ctr"><div class="rg"><i class="rad"></i><i class="pr"></i><i class="pr p2"></i><svg class="rsv" viewBox="0 0 160 160"><circle class="tr" cx="80" cy="80" r="74"/><circle class="pg" id="rgc" cx="80" cy="80" r="74"/></svg><img data-logo alt="ตรา"></div><h1>กองบัญชาการกองทัพไทย</h1><p>ระบบข้อบังคับการใช้มอด</p><div class="msg" id="msg">พร้อมเริ่มระบบ</div><button class="btn" id="start">▶ แตะเพื่อเริ่มระบบ</button><div class="pc" id="pc">0%</div><ul class="stp"><li>เชื่อมต่อระบบ</li><li>ตรวจสอบสิทธิ์ผู้ใช้</li><li>โหลดบัญชีคำสั่งที่ใช้ได้</li><li>โหลดบัญชีคำสั่งต้องห้าม</li><li>อ้างอิงข้อกฎหมาย</li></ul><button class="btn" id="enter">เข้าสู่ระบบ</button></div><div class="flash" id="flash"></div><div class="stamp" id="stamp">อนุมัติ<small>APPROVED</small></div></div>
+
+<header class="hd"><button class="ib mb" id="mn" aria-label="เมนู">☰</button><button class="ib" id="bk" style="display:none" aria-label="กลับ">‹</button><img data-logo alt="ตรา"><div><b>ข้อบังคับการใช้มอด</b><small>กองบัญชาการกองทัพไทย</small></div><span class="sp"></span><button class="ib" id="fs" aria-label="ขนาดตัวอักษร">Aa</button><button class="ib" id="sr" aria-label="ค้นหา">🔍</button></header>
+<div class="scrim" id="scrim"></div><aside class="dr"><div class="dh"><b>เมนูทั้งหมด</b><button class="ib" id="dx">✕</button></div>
+<div class="dg">หลัก</div><button class="dl" data-go="home">🏠 หน้าแรก</button><button class="dl" data-go="ai">🤖 ถาม AI</button><button class="dl" data-go="allowed">✅ คำสั่งที่ใช้ได้</button><button class="dl" data-go="banned">🚫 คำสั่งต้องห้าม</button>
+<div class="dg">ข้อมูลและกฎหมาย</div><button class="dl" data-go="rules">📋 ข้อบังคับหลัก</button><button class="dl" data-go="law">⚖️ ข้อกฎหมายอ้างอิง</button><button class="dl" data-go="cheat">🛡️ โกง / สคริปต์ / บัค</button><button class="dl" data-go="about">💡 วัตถุประสงค์และคำศัพท์</button>
+<div class="dg">บริการ</div><button class="dl" data-go="report">📝 แจ้งเบาะแส</button><button class="dl" data-go="calc">🧮 คำนวณระดับโทษ</button><button class="dl" data-go="elig">🪪 ตรวจสิทธิ์ใช้มอด</button><button class="dl" data-go="quiz">🎓 แบบทดสอบ</button>
+<div class="dg">ของฉัน / ตั้งค่า</div><button class="dl" id="fv">⭐ คำสั่งที่บันทึก</button><button class="dl" id="snd">🔊 เสียง: เปิด</button><button class="dl" id="thm">🌓 สลับธีมสว่าง / มืด</button></aside>
+
+<main>
+<div class="page active" id="page-home">
+    <div class="card">
+      <h2>📢 ยินดีต้อนรับ</h2>
+      <p>ระบบข้อบังคับและกฎระเบียบการใช้มอดของกองบัญชาการกองทัพบก</p>
+      <p>กรุณาเลือกหมวดจากเมนูด้านบนเพื่อดูรายละเอียด</p>
+      <ul>
+        <li><strong>ข้อบังคับ</strong> — หลักการทั่วไปและบทลงโทษ</li>
+        <li><strong>ข้อกฎหมาย</strong> — มาตราอ้างอิงจากกฎหมายจำลอง</li>
+        <li><strong>คำสั่งที่ใช้ได้</strong> — รายการคำสั่งที่อนุญาต</li>
+        <li><strong>คำสั่งต้องห้าม</strong> — รายการคำสั่งที่ห้ามใช้</li>
+      </ul>
+      <p class="callout"><strong>หมายเหตุสำคัญ :</strong> ไม่ว่าชั้นยศใด หากใช้คำสั่งต้องห้าม จะถูกดำเนินการทางกฎหมายทันที</p>
+      <div class="date-box">ประกาศ ณ วันที่ ๑๔ ตุลาคม พ.ศ. ๒๕๖๙<br><span class="badge">บังคับใช้หลังประกาศนี้ออกไป</span></div>
+      <div class="signature"><div class="name">พลเอก nongprang077 ณ นิติเดชาธร</div><div class="pos">เสนาธิการ กองบัญชาการกองทัพไทย</div></div>
+    </div>
+  </div>
+
+  <div class="page" id="page-rules">
+    <div class="card">
+      <h2>📋 ข้อบังคับหลัก</h2>
+      <div class="section"><div class="section-title">๑. การใช้มอดควรอยู่ในขอบเขต</div>
+      <p>การใช้ทั่วไปที่ใช้ปกติอยู่แล้ว ไม่มีปัญหาอะไร แต่หากมีการใช้คำสั่งที่ไม่คุ้นเคย เช่น <code class="ban">:doll</code> <code class="ban">:spin</code> คำสั่งเหล่านี้ <strong class="red">ห้ามใช้อย่างถาวร</strong></p></div>
+      <div class="section"><div class="section-title">๒. บทลงโทษ</div>
+      <p>หากกองบัญชาการตรวจพบการใช้มอดต้องห้าม หรือใช้ในทางที่ผิด ก่อให้เกิดความวุ่นวาย จะดำเนินการสอบสวนหรือส่งเรื่องให้สำนักงานพระธรรมนูญพิจารณา</p>
+      <p>หากใช้มอดโดยไม่เป็นไปตามกฎหมายของแมพ จะมีโทษขั้นสูง</p></div>
+      <div class="section"><div class="section-title">๓. ผู้มีสิทธิใช้มอด</div>
+      <p>ต้องเป็นนายทหารชั้นสัญญาบัตรขึ้นไป (ร้อยตรีขึ้นไป) หรือสังกัดกรมยุทธศึกษาทหารบก และสารวัตรทหารบก</p></div>
+      <div class="section"><div class="section-title">๔. บังคับใช้ทุกชั้นยศ</div>
+      <p><strong class="red">ไม่ว่าชั้นยศใด</strong> หากใช้คำสั่งต้องห้าม จะถูกดำเนินการทางกฎหมายทันที โดยไม่มีการยกเว้น</p></div>
+      
+      <div class="section"><div class="section-title">๕. ข้อห้ามพิเศษคำสั่ง :to</div>
+      <p>คำสั่ง <code>:to</code> อนุญาตเฉพาะการวาปไปหา <strong>บุคคล</strong> เท่านั้น <strong class="red">ห้ามใส่พิกัด</strong> ผู้ฝ่าฝืนมีโทษขั้นสูง (MAJ–CAP)</p></div>
+<div class="signature"><div class="name">พลเอก nongprang077 ณ นิติเดชาธร</div><div class="pos">เสนาธิการ กองบัญชาการกองทัพไทย</div></div>
+    </div>
+  </div>
+
+  
+  <div class="page" id="page-law">
+    <div class="card">
+      <h2>⚖️ ข้อกฎหมายอ้างอิง</h2>
+      <p>
+        อ้างอิงจาก <strong>กฎและข้อบังคับทางทหาร · แมพจำลองการเป็นทหารไทย</strong><br>
+        โดย สำนักงานพระธรรมนูญ · แก้ไขล่าสุด <strong>๐๓ กรกฎาคม ๒๕๖๙</strong>
+      </p>
+
+      <div class="section">
+        <div class="section-title">ภาคที่ ๑ โทษและมาตรการทางวินัย</div>
+        <p><strong>มาตรา ๑</strong> หลักการกำหนดโทษ — ต้องอาศัยอำนาจตามบทบัญญัติโดยเคร่งครัด ห้ามตีความขยายเกินกว่าที่กฎหมายบัญญัติ ตามหลักความได้สัดส่วน</p>
+        <p><strong>มาตรา ๑ วรรค (๕)</strong> ผู้ดำรงตำแหน่งบังคับบัญชาอาศัยตำแหน่งกระทำความผิด ศาลอาจเพิ่มโทษได้ไม่เกินกึ่งหนึ่ง</p>
+        <p><strong>มาตรา ๒</strong> ประเภทของโทษ — ภาคทัณฑ์เป็นลายลักษณ์อักษร · ปรับ · จำคุก</p>
+        <p><strong>มาตรา ๓</strong> ระดับความร้ายแรง — <span class="pill">MIN</span> <span class="pill">MOD</span> <span class="pill">MAJ</span> <span class="pill">MAJ-CAP</span> <span class="pill">CAP</span></p>
+        <p><strong>มาตรา ๔–๕</strong> อัตราโทษปรับและจำคุกตามระดับความร้ายแรง</p>
+        <p><strong>มาตรา ๖</strong> โทษทางวินัย — ภาคทัณฑ์ · กักบริเวณ · พักราชการ · ลดตำแหน่ง · ลดชั้นยศ · พ้นจากตำแหน่ง</p>
+        <p><strong>มาตรา ๗</strong> มาตรการรักษาความปลอดภัย — ระงับสิทธิ · เพิกถอนอำนาจ · ขึ้นบัญชีห้ามใช้งานระบบเป็นการถาวร</p>
+        <p><strong>มาตรา ๘</strong> การร่วมกระทำความผิด — ตัวการ ผู้ใช้ ผู้สนับสนุน ผู้สมคบ รับผิดตามระดับการมีส่วนร่วม</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">มาตราหลักเกี่ยวกับคำสั่งมอด / แอดมิน</div>
+        <p><strong>มาตรา ๓๕</strong> การใช้อำนาจของผู้มีสิทธิบริหารระบบ (คำสั่งแอดมิน)<br>
+        ต้องใช้ภายในขอบเขตกฎหมาย ยึดหลักนิติรัฐ ความจำเป็น ได้สัดส่วน เสมอภาค โปร่งใส<br>
+        · ใช้อำนาจเกินขอบเขต / โดยมิชอบ → โทษ <strong>MOD ถึง MAJ</strong><br>
+        · ก่อความเสียหายร้ายแรง กระทบบังคับบัญชา หรือละเมิดสิทธิขั้นพื้นฐาน → โทษ <strong>CAP</strong></p>
+        <p><strong>มาตรา ๓๗</strong> ความผิดเกี่ยวกับการใช้เครื่องมือบริหารระบบ (คำสั่งแอดมิน)<br>
+        เครื่องมือบริหารระบบใช้ได้เฉพาะผู้ได้รับอนุญาต และเฉพาะเท่าที่จำเป็นแก่ราชการ<br>
+        · ใช้โดยไม่มีอำนาจ หรือนอกวัตถุประสงค์ → โทษ <strong>MAJ</strong><br>
+        · ใช้แสวงหาประโยชน์ส่วนตน สร้างความได้เปรียบ หรือก่อความเสียหาย → โทษ <strong>CAP</strong><br>
+        · โอน มอบ ให้ยืมสิทธิใช้เครื่องมือโดยไม่ได้รับอนุญาต → โทษ <strong>CAP</strong></p>
+        <p><strong>มาตรา ๓๘</strong> วินัยทหารและความผิดทางวินัย — กำลังพลทุกนายต้องปฏิบัติตามกฎหมาย ระเบียบ คำสั่ง และธรรมเนียมทางทหารอย่างเคร่งครัด</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">มาตราที่เกี่ยวข้องอื่น</div>
+        <p><strong>มาตรา ๒๗</strong> ความผิดเกี่ยวกับความสงบเรียบร้อยภายในค่ายทหาร — ก่อเหตุวุ่นวาย ใช้กำลัง หรือกระทำอันเป็นอันตรายต่อความสงบ</p>
+        <p><strong>มาตรา ๒๘</strong> การจัดกิจกรรมหรือปฏิบัติภารกิจโดยมิชอบ ฝ่าฝืนระเบียบ</p>
+        <p><strong>มาตรา ๒๙–๓๐</strong> การใช้และขับขี่ยานพาหนะของทางราชการโดยไม่มีสิทธิ หรือโดยประมาท</p>
+        <p><strong>มาตรา ๓๓</strong> กรมสารวัตรทหารและสำนักงานจเรทหารมีอำนาจตรวจสอบและดำเนินการตามกฎหมาย</p>
+        <p><strong>มาตรา ๔๐</strong> ความผิดฐานแอบอ้างตำแหน่งหรืออำนาจหน้าที่</p>
+        <p><strong>มาตรา ๑๖</strong> (ภาคที่ ๒) การใช้อำนาจหน้าที่โดยมิชอบ — ข่มขู่ บีบบังคับ แสวงหาประโยชน์</p>
+        <p><strong>ข้อบังคับเขตพระราชฐาน มาตรา ๑</strong> ห้ามเข้าเขตพระราชวัง / เรือนประทับโดยไม่ได้รับอนุญาต — ความผิดร้ายแรง โทษขั้นสูงสุด</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">การปรับใช้กับคำสั่งมอด</div>
+        <p>คำสั่งต้องห้ามในระบบนี้ อ้างอิงหลักจาก <strong>มาตรา ๓๕</strong> และ <strong>มาตรา ๓๗</strong> เป็นหลัก<br>
+        การใช้คำสั่งก่อกวน เล่น ๆ หรือไม่เกี่ยวกับภารกิจ เข้าข่ายใช้นอกวัตถุประสงค์แห่งราชการ<br>
+        การใช้คำสั่งอันตราย (crash · control · ban โดยไม่มีอำนาจ ฯลฯ) อาจเข้าข่ายโทษ <strong>MAJ ถึง CAP</strong><br>
+        ผู้บังคับบัญชาที่กระทำผิดอาจถูกเพิ่มโทษตาม <strong>มาตรา ๑ วรรค (๕)</strong></p>
+      </div>
+
+      <div class="signature">
+        <div class="name">อ้างอิง สำนักงานพระธรรมนูญ · แก้ไขล่าสุด ๐๓/๐๗/๒๕๖๙</div>
+        <div class="pos">กฎและข้อบังคับทางทหาร · แก้ไขล่าสุด ๐๓/๐๗/๒๕๖๙</div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="page" id="page-allowed"><div class="card"><h2>✅ คำสั่งที่ใช้ได้</h2>
+<p>ผู้มีสิทธิใช้ต้องเป็นนายทหารชั้นสัญญาบัตรขึ้นไป หรือสังกัดกรมยุทธศึกษาทหารบก / สารวัตรทหารบก / สำนักงานจเรทหารบก</p>
+<div class="callout"><b>สงวนเฉพาะกองบัญชาการ :</b> <code>:invisible</code> <code>:fly</code> <code>:globalban</code> <code>:gameban</code> <code>:track all</code> และกลุ่มตรวจสอบ (<code>:joinlogs</code> <code>:errorlogs</code> <code>:exploitlogs</code>)<br><b>เปิดตามเงื่อนไข :</b> <code>:music</code> เฉพาะงานพิธี · <code>:god</code> <code>:ungod</code> เมื่อจำเป็น · <code>:banlist</code> เช็กผู้ใช้โปรแกรมโกงที่ถูกแบน<br><b class="red">ห้ามแม้กองบัญชาการ :</b> <code class="ban">:ban</code> <code class="ban">:tban</code> <code class="ban">:novid</code> <code class="ban">:incognito</code></div>
+<p class="note">แตะคำสั่งเพื่อคัดลอก · แตะ ★ เพื่อบันทึก</p></div>
+<div class="sb"><input id="aQ" type="search" placeholder="ค้นหาคำสั่งที่ใช้ได้ เช่น give, logs…" autocomplete="off"></div><div class="chips" id="aChips"></div><div class="cnt" id="aCnt"></div><div id="aList"></div></div>
+
+<div class="page" id="page-banned"><div class="card"><h2>🚫 คำสั่งต้องห้าม</h2>
+<p>คำสั่งที่ไม่จำเป็นต่อราชการหรืออาจก่อความวุ่นวาย เข้าข่าย <strong>มาตรา ๓๕ / ๓๗</strong> และอาจเข้าข่าย <strong>มาตรา ๓๘ / ๒๗</strong></p>
+<div class="callout"><strong class="red">ทุกรายการจัดเป็นโทษระดับสูง</strong> ไม่ว่าชั้นยศใด จะถูกดำเนินการทางกฎหมายทันที</div>
+<div class="warn"><b>⚠️ ข้อห้ามระดับสูง — :to ใส่พิกัด</b><br><code class="ban">:to</code> ใช้ได้เฉพาะวาปไปหา <b>บุคคล</b> เท่านั้น ห้ามใส่พิกัดโดยเด็ดขาด ฝ่าฝืนมีโทษขั้นสูง (MAJ–CAP) ตามมาตรา ๓๗ / ๓๕</div></div>
+<div class="sb"><input id="bQ" type="search" placeholder="ค้นหาคำสั่งต้องห้าม เช่น crash, spin…" autocomplete="off"></div><div class="chips" id="bChips"></div><div class="cnt" id="bCnt"></div><div id="bList"></div></div>
+<div class="page" id="page-cheat">
+<div class="card"><h2>🛡️ ผู้ใช้โปรแกรมโกง สคริปต์ และบัค</h2>
+<p>ส่วนนี้ <strong>แยกจากข้อบังคับการใช้มอด</strong> ใช้บังคับกับทุกคนในแมพ ไม่ว่าชั้นยศ ผู้ใช้โปรแกรมโกงจะถูกดำเนินการทางกฎหมาย และอาจถูกขึ้นบัญชีห้ามใช้งานระบบเป็นการถาวร</p>
+<div class="callout">มาตรา ๓๕ / ๓๗ ใช้กับ <b>คำสั่งมอดหรือแอดมิน</b> เท่านั้น ส่วนการโกงให้อ้างอิงมาตราในหัวข้อ "กฎหมายอ้างอิง" ด้านล่าง</div></div>
+<div class="card"><h2>📌 ประเภทการกระทำ</h2>
+<div class="section"><div class="section-title">๑. โปรแกรมโกง (Cheat / Exploit)</div><p>ใช้โปรแกรมหรือตัวช่วยจากภายนอกเพื่อเปลี่ยนแปลงการเล่น เช่น บิน เร่งความเร็ว ทะลุสิ่งกีดขวาง ล็อกเป้า หรือเสกของ</p></div>
+<div class="section"><div class="section-title">๒. สคริปต์ (Script)</div><p>รันสคริปต์ที่ไม่ได้รับอนุญาตในแมพ รวมถึงผู้ที่ <b>แจก ขาย ให้ยืม หรือสอนใช้</b> สคริปต์ ถือเป็นผู้ร่วมกระทำผิด</p></div>
+<div class="section"><div class="section-title">๓. บัค (Bug Abuse)</div><p>จงใจใช้ช่องโหว่ของแมพเพื่อเอาเปรียบผู้อื่น ก่อความเสียหาย หรือเลี่ยงกติกา หากพบบัคให้แจ้งกองบัญชาการทันที ห้ามนำไปใช้ซ้ำหรือเผยแพร่</p></div></div>
+<div class="card"><h2>⚖️ กฎหมายอ้างอิง</h2><p class="note">อ้างอิงจากข้อกฎหมายในหน้า "กฎหมาย" · แก้ไขล่าสุด ๐๓/๐๗/๒๕๖๙</p>
+<ul>
+<li><span class="pill">มาตรา ๑</span> หลักการกำหนดโทษ ต้องอาศัยบทบัญญัติโดยเคร่งครัด และได้สัดส่วนกับความผิด</li>
+<li><span class="pill">มาตรา ๓–๕</span> ระดับความร้ายแรง (MIN–CAP) และอัตราโทษ ใช้กำหนดโทษตามผลกระทบของการโกง</li>
+<li><span class="pill">มาตรา ๗</span> ระงับสิทธิ เพิกถอนอำนาจ และขึ้นบัญชีห้ามใช้งานระบบถาวร ใช้กับผู้ใช้โปรแกรมโกงและสคริปต์</li>
+<li><span class="pill">มาตรา ๘</span> การร่วมกระทำผิด ผู้แจก ผู้ขาย หรือผู้สนับสนุนสคริปต์ รับผิดตามระดับการมีส่วนร่วม</li>
+<li><span class="pill">มาตรา ๓๓</span> กรมสารวัตรทหารและสำนักงานจเรทหารมีอำนาจตรวจสอบและดำเนินการตามกฎหมาย</li>
+<li><span class="pill">มาตรา ๓๘</span> วินัยทหาร กำลังพลต้องปฏิบัติตามกฎหมายและระเบียบอย่างเคร่งครัด</li>
+<li><span class="pill">มาตรา ๒๗</span> กรณีการโกงก่อความวุ่นวายหรือกระทบความสงบเรียบร้อยภายในค่าย</li>
+<li><span class="pill">มาตรา ๑ วรรค (๕)</span> ผู้บังคับบัญชาที่อาศัยตำแหน่งกระทำความผิด ศาลอาจเพิ่มโทษได้ไม่เกินกึ่งหนึ่ง</li></ul></div>
+<div class="card"><h2>🔎 ขั้นตอนดำเนินการ</h2><ol>
+<li>กองบัญชาการตรวจพบ หรือรับแจ้งผู้ต้องสงสัย</li>
+<li>ตรวจหลักฐานด้วย <button class="cd" data-c=":exploitlogs">:exploitlogs</button> (เฉพาะกองบัญชาการ) ประกอบ <button class="cd" data-c=":logs">:logs</button> <button class="cd" data-c=":killlogs">:killlogs</button> <button class="cd" data-c=":chatlogs">:chatlogs</button></li>
+<li>ส่งเรื่องให้สารวัตรทหารหรือสำนักงานพระธรรมนูญพิจารณา</li>
+<li>กองบัญชาการใช้ <button class="cd" data-c=":globalban">:globalban</button> <button class="cd" data-c=":gameban">:gameban</button> ตามผลการพิจารณา</li>
+<li>ตรวจว่าถูกแบนแล้วด้วย <button class="cd" data-c=":banlist">:banlist</button></li></ol></div>
+</div>
+<div class="page" id="page-ai"><div class="card"><h2>🤖 ถาม AI</h2><p class="note">ระบบตอบจากบัญชีคำสั่งและมาตราในเว็บนี้ ทำงานออฟไลน์ได้ ไม่ต้องเชื่อมต่อ API</p><p>ถามได้ว่าใช้คำสั่งนี้ผิดไหม ทำไมถึงห้าม หรือผิดมาตราอะไร ระบบจะตรวจจากบัญชีก่อน แล้วให้ AI อธิบายเหตุผล</p><p class="note">AI ตอบจากข้อมูลในเว็บนี้เท่านั้น ไม่ใช่คำวินิจฉัยอย่างเป็นทางการ</p><button class="chip" id="aiC">🗑 ล้างการสนทนา</button>
+<div id="qs"></div></div>
+<div class="msgs" id="msgs"><div class="bub a">สวัสดีครับ ถามได้เลย เช่น "ใช้ :heal ผิดไหม" หรือ "ทำไม :to ห้ามใส่พิกัด"</div></div>
+<div class="cmp"><div class="chips" id="sg"></div><input id="aiQ" placeholder="พิมพ์คำถาม…" autocomplete="off"><button class="pbtn" id="aiS">ส่ง</button></div></div>
+<div class="page" id="page-menu"><div class="card"><h2>☰ เมนูบริการ</h2><p class="note">รวมบริการทั้งหมดของระบบ</p></div>
+<button class="row" data-go="rules"><i>📋</i><span><b>ข้อบังคับหลัก</b><small>กฎการใช้มอดและบทลงโทษ</small></span></button>
+<button class="row" data-go="law"><i>⚖️</i><span><b>ข้อกฎหมายอ้างอิง</b><small>มาตราและระดับโทษ</small></span></button>
+<button class="row" data-go="cheat"><i>🛡️</i><span><b>โกง / สคริปต์ / บัค</b><small>ประเภท กฎหมาย และขั้นตอนดำเนินการ</small></span></button>
+<button class="row" data-go="report"><i>📝</i><span><b>แจ้งเบาะแส</b><small>สร้างใบแจ้งพร้อมเลขที่และมาตราอ้างอิง</small></span></button>
+<button class="row" data-go="quiz"><i>🎓</i><span><b>แบบทดสอบความรู้</b><small>สุ่ม 8 ข้อ ว่าคำสั่งไหนใช้ได้หรือห้าม</small></span></button>
+<button class="row" data-go="about"><i>💡</i><span><b>วัตถุประสงค์และคำศัพท์</b><small>ระบบนี้ทำไว้เพื่ออะไร และคำศัพท์สำคัญ</small></span></button>
+<button class="row" data-go="calc"><i>🧮</i><span><b>คำนวณระดับโทษ</b><small>ประเมินระดับโทษจากมาตราที่เกี่ยวข้อง</small></span></button>
+<button class="row" data-go="elig"><i>🪪</i><span><b>ตรวจสิทธิ์ใช้มอด</b><small>ดูว่าสถานะของคุณมีสิทธิหรือไม่</small></span></button></div>
+<div class="page" id="page-report"><div class="card fm"><h2>📝 แจ้งเบาะแส</h2><label>ประเภท</label><select id="rt"><option value="c">โปรแกรมโกง</option><option value="s">สคริปต์</option><option value="b">บัค / ช่องโหว่</option><option value="m">ใช้คำสั่งมอดผิดระเบียบ</option></select><label>ชื่อผู้ถูกแจ้ง *</label><input id="rn"><label>เวลา / สถานที่เกิดเหตุ</label><input id="rw"><label>รายละเอียด *</label><textarea id="rd" rows="4"></textarea><label>ผู้แจ้ง (ไม่บังคับ)</label><input id="rr"><button class="pbtn" id="rp">สร้างใบแจ้งเบาะแส</button>
+<div id="tkw" style="display:none"><div class="tk" id="tk"></div><button class="pbtn" id="tkc">คัดลอกใบแจ้ง</button></div></div></div>
+<div class="page" id="page-quiz"><div id="qb"></div></div>
+<div class="page" id="page-elig"><div class="card fm"><h2>🪪 ตรวจสิทธิ์ใช้มอด</h2><label>สถานะของคุณ</label><select id="eg"><option value="">เลือกสถานะ</option><option value="o">นายทหารชั้นสัญญาบัตร (ร้อยตรีขึ้นไป)</option><option value="n">ต่ำกว่าร้อยตรี</option><option value="x">สังกัดกรมยุทธศึกษาทหารบก / สารวัตรทหารบก / จเรทหารบก</option><option value="h">กองบัญชาการ</option></select><div id="egr"></div></div></div>
+<div class="page" id="page-calc"><div class="card fm"><h2>🧮 คำนวณระดับโทษเบื้องต้น</h2><label>ลักษณะการกระทำ</label><select id="ca"><option value="0">ใช้โดยไม่มีอำนาจ / นอกวัตถุประสงค์ราชการ</option><option value="1">ใช้อำนาจเกินขอบเขต / โดยมิชอบ</option><option value="2">ใช้หาประโยชน์ส่วนตน / สร้างความได้เปรียบ / ก่อความเสียหาย</option><option value="3">โอน มอบ ให้ยืมสิทธิใช้เครื่องมือ</option><option value="4">ก่อความเสียหายร้ายแรง / กระทบผู้บังคับบัญชา / ละเมิดสิทธิขั้นพื้นฐาน</option><option value="5">ใช้ :to โดยใส่พิกัด</option></select><label>ตำแหน่งผู้กระทำ</label><select id="cb"><option value="0">ผู้ปฏิบัติทั่วไป</option><option value="1">ผู้บังคับบัญชาอาศัยตำแหน่งกระทำผิด</option></select><label>การมีส่วนร่วม</label><select id="cc"><option value="0">ตัวการ / กระทำเอง</option><option value="1">ผู้ใช้ / ผู้สนับสนุน / ผู้สมคบ</option></select><button class="pbtn" id="cg">คำนวณ</button><div id="cr"></div></div></div>
+<div class="page" id="page-about"><div class="card"><h2>💡 วัตถุประสงค์ของระบบ</h2><ul><li><b>ให้รู้ขอบเขต</b> ว่าคำสั่งไหนใช้ได้ ใช้เมื่อไร และใครใช้ได้</li><li><b>ให้ทุกข้อมีเหตุผลและมาตรา</b> ลดการตีความเอง และไม่ลงโทษเกินกฎหมาย (ม.๑)</li><li><b>ป้องกันการใช้ผิดโดยไม่ตั้งใจ</b> ด้วยการตรวจคำสั่ง ถาม AI และแบบทดสอบ</li><li><b>ให้แจ้งและติดตามเรื่องโกง สคริปต์ บัค</b> อย่างเป็นระบบ</li></ul></div>
+<div class="card"><h2>📖 คำศัพท์</h2><ul><li><b>มอด</b> — ชุดคำสั่งแอดมินที่ใช้บริหารระบบในแมพ</li><li><b>คำสั่งต้องห้าม</b> — คำสั่งที่ห้ามใช้ทุกชั้นยศ โทษสูงทั้งหมด</li><li><b>คำสั่งสงวน</b> — คำสั่งที่ใช้ได้เฉพาะกองบัญชาการ</li><li><b>MIN · MOD · MAJ · MAJ-CAP · CAP</b> — ระดับความร้ายแรงของโทษตาม ม.๓</li><li><b>โปรแกรมโกง / สคริปต์ / บัค</b> — การเปลี่ยนแปลงหรือเอาเปรียบการเล่นด้วยโปรแกรม สคริปต์ หรือช่องโหว่ แยกจากเรื่องมอด</li><li><b>ผู้มีสิทธิใช้มอด</b> — นายทหารสัญญาบัตรขึ้นไป หรือสังกัดหน่วยที่กฎกำหนด</li></ul></div></div>
+<div class="footer">เอกสารสำหรับการจำลอง Roleplay เท่านั้น · มิใช่เอกสารราชการจริง<br>© กองบัญชาการกองทัพไทย</div>
+</main>
+
+<nav class="tabs"><button class="on" data-p="home"><i>🏠</i>หน้าแรก</button><button data-p="ai"><i>🤖</i>ถาม AI</button><button data-p="allowed"><i>✅</i>ใช้ได้</button><button data-p="banned"><i>🚫</i>ต้องห้าม</button><button data-p="menu"><i>☰</i>เมนู</button></nav>
+<div class="ck" id="ck"><b>เว็บไซต์นี้เก็บข้อมูลในเครื่องของคุณ</b><p>ใช้จำคำสั่งที่กด ★ ไว้ในเบราว์เซอร์นี้เท่านั้น ไม่ส่งไปที่ใด ส่วนคำถามที่ถาม AI จะถูกส่งไปประมวลผลเพื่อตอบ</p><div class="cb2"><button class="chip" id="ckn">ไม่ยอมรับ</button><button class="pbtn" id="cky">ยอมรับทั้งหมด</button></div></div>
+<div class="toast" id="toast"></div>
+
+<script>(function(){var L="data:image/jpeg;base64,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";document.querySelectorAll('img[data-logo]').forEach(function(i){i.onerror=function(){var s=document.createElement('span');s.textContent='🪖';s.style.cssText='font-size:'+(i.closest('.rg')?'4.5rem':'1.8rem')+';line-height:1';i.replaceWith(s)};i.src=L});setTimeout(function(){if(!window.__ok){var s=document.getElementById('splash');if(s)s.classList.add('hide')}},7000)})()</script>
+<script>
+window.__ok=1;const A=[{"c": [":banlist"], "d": "ดูรายชื่อแบน — ใช้เช็กว่าผู้ใช้โปรแกรมโกงถูกแบนแล้วหรือยัง", "s": "chk", "r": "เป็นการอ่านข้อมูลอย่างเดียว ไม่เปลี่ยนสถานะผู้ใด และช่วยยืนยันว่าผู้ใช้โปรแกรมโกงถูกจัดการแล้ว"},{"c": [":cd", ":countdown"], "d": "จับเวลา (ใช้ฝึก)", "s": "all", "r": "ใช้จับเวลาในการฝึกและภารกิจ เป็นเครื่องมือประสานงานที่ไม่กระทบตัวละครหรือความสมดุลของเกม"},{"c": [":chatlogs", ":chatlogs true"], "d": "ดูแชทย้อนหลัง", "s": "all", "r": "ใช้ย้อนดูแชทเพื่อหาหลักฐานหรือเคลียร์ข้อพิพาท อ่านอย่างเดียว ไม่แก้ข้อมูลหรือกระทบผู้ใด จึงใช้ได้ตามปกติ"},{"c": [":cmdbox"], "d": "พิมพ์คำสั่งไม่โชว์ในแชท", "s": "all", "r": "พิมพ์คำสั่งโดยไม่แสดงในแชท ลดการรบกวนผู้อื่นระหว่างปฏิบัติงาน และไม่เปลี่ยนสถานะเกม"},{"c": [":cmds", ":usage"], "d": "ดูรายการคำสั่งที่มีสิทธิ์ใช้", "s": "all", "r": "แค่ดูรายการคำสั่งที่ตนมีสิทธิ์ใช้ ช่วยให้ไม่ใช้คำสั่งผิดโดยไม่ตั้งใจ"},{"c": [":DM", ":message"], "d": "ส่งข้อความส่วนตัว", "s": "all", "r": "ส่งข้อความส่วนตัวเพื่อสั่งการหรือประสานงานโดยไม่รบกวนทั้งเซิร์ฟ"},{"c": [":errorlogs"], "d": "เช็ก Error", "s": "hq", "r": "ตรวจข้อผิดพลาดของระบบ เป็นข้อมูลเทคนิคที่ควรจำกัดให้ผู้ดูแลระดับสูง จึงสงวนให้กองบัญชาการ"},{"c": [":exploitlogs"], "d": "เช็กการใช้โปร", "s": "hq", "r": "ตรวจการใช้โปรแกรมโกง เป็นข้อมูลความมั่นคงของระบบ ต้องจำกัดสิทธิ์ที่กองบัญชาการเพื่อกันการรั่วไหล"},{"c": [":give"], "d": "เสกของให้ผู้อื่น (ห้ามเสกปืนให้ประชาชน/โปร)", "s": "all", "r": "ใช้จัดอุปกรณ์ให้กำลังพลตามภารกิจ แต่ห้ามเสกอาวุธให้ประชาชนหรือผู้ใช้โปรเพื่อกันเสียสมดุล"},{"c": [":give me"], "d": "เสกของให้ตัวเอง (ใช้เฉพาะงานราชการ)", "s": "all", "r": "เสกอุปกรณ์ให้ตัวเองได้เมื่อจำเป็นต่อหน้าที่ราชการ ไม่ใช้เพื่อประโยชน์ส่วนตัว"},{"c": [":give me all"], "d": "เสกของทั้งหมดให้ตัวเอง (เฉพาะจำเป็น)", "s": "all", "r": "ใช้เฉพาะเมื่อภารกิจต้องใช้อุปกรณ์ครบชุด จึงจำกัดไว้เฉพาะกรณีจำเป็นเพื่อไม่ให้ได้เปรียบเกินเหตุ"},{"c": [":h"], "d": "ประกาศรอง", "s": "all", "r": "ประกาศรองที่ใช้แจ้งข่าวสั้น ๆ ในงานราชการ เป็นช่องทางสื่อสารตามปกติ"},{"c": ["!help"], "d": "ขอความช่วยเหลือเพิ่มเติม เมื่อติดปัญหาในการปฏิบัติตามระเบียบ", "s": "all", "r": "เป็นช่องทางขอความช่วยเหลือ ไม่กระทบผู้เล่นอื่นและไม่ให้ความได้เปรียบ ช่วยให้ทำตามระเบียบได้ถูกต้อง"},{"c": [":hint"], "d": "ข้อความสั้นด้านบน (งานราชการ)", "s": "all", "r": "ข้อความสั้นด้านบนจอ แจ้งเหตุงานราชการได้เร็วโดยไม่รกหน้าจอ"},{"c": [":joinlogs"], "d": "ประวัติเข้าเซิร์ฟ", "s": "hq", "r": "ดูประวัติเข้าเซิร์ฟเพื่อตรวจตัวตนและผู้แอบอ้าง เป็นข้อมูลส่วนบุคคล จึงสงวนให้กองบัญชาการ"},{"c": [":killlogs"], "d": "เช็กประวัติการตาย / อาวุธ", "s": "all", "r": "ใช้ตรวจประวัติการตายและอาวุธเมื่อเกิดข้อพิพาท อ่านอย่างเดียว ช่วยให้ตัดสินอย่างเป็นธรรม จึงใช้ได้ตามปกติ"},{"c": [":logs"], "d": "เช็กคำสั่งย้อนหลัง", "s": "all", "r": "ดูคำสั่งย้อนหลังเพื่อตรวจว่ามีใครใช้คำสั่งผิดระเบียบ อ่านอย่างเดียว ช่วยให้ระบบโปร่งใส จึงใช้ได้ตามปกติ"},{"c": [":music"], "d": "เปิดเพลง — เฉพาะกองบัญชาการ และเฉพาะงานพิธีเท่านั้น", "s": "event", "r": "ใช้เปิดเพลงในงานพิธีราชการเท่านั้น ห้ามเปิดในเวลาปกติเพราะรบกวนภารกิจ"},{"c": [":n"], "d": "ประกาศสำคัญจากกรมยุทธ / หน่วยงาน", "s": "all", "r": "ประกาศสำคัญจากกรมยุทธ/หน่วยงาน เป็นช่องทางสื่อสารราชการอย่างเป็นทางการ"},{"c": [":ping"], "d": "เช็กปิง", "s": "all", "r": "เช็กปิงเพื่อดูคุณภาพการเชื่อมต่อ อ่านค่าเท่านั้น ไม่กระทบผู้อื่น"},{"c": [":re", ":ref"], "d": "รีตัว / ใช้แทน :heal (ห้ามใช้มั่ว)", "s": "all", "r": "รีตัวเมื่อบั๊กหรือติดปัญหา และใช้แทน :heal ได้เพราะเร็วกว่า แต่ห้ามใช้มั่วเพื่อเลี่ยงการตรวจสอบ"},{"c": [":refresh"], "d": "รีเฟรชตัวละครตัวเอง", "s": "all", "r": "รีเฟรชตัวละครของตนเองเพื่อแก้ปัญหาการแสดงผล ไม่มีผลกับผู้อื่น"},{"c": [":removetools", ":clear"], "d": "เก็บของออกจากตัว", "s": "all", "r": "เก็บของออกจากตัวเพื่อความเรียบร้อย ใช้กับตัวเองหรือตามหน้าที่เท่านั้น"},{"c": [":startergive"], "d": "เสกของเข้า Starter (ใช้ตามหน้าที่)", "s": "all", "r": "จัดอุปกรณ์เข้า Starter ให้หน่วยตามหน้าที่ เป็นงานธุรการที่จำเป็นต่อการจัดกำลัง"},{"c": [":team"], "d": "จัดทีม (นายพันขึ้นไป / ผู้มีสิทธิ์)", "s": "all", "r": "จัดทีมต้องมีอำนาจ (นายพันขึ้นไปหรือผู้มีสิทธิ์) เพื่อกันการแอบอ้างสังกัด"},{"c": [":time"], "d": "ดูเวลาเซิร์ฟ", "s": "all", "r": "ดูเวลาเซิร์ฟ อ่านค่าอย่างเดียว ช่วยนัดหมายภารกิจ"},{"c": [":to"], "d": "วาปไปหาบุคคลเท่านั้น — ห้ามใส่พิกัด", "s": "all", "r": "วาปไปหาบุคคลเพื่อปฏิบัติหน้าที่ แต่ห้ามใส่พิกัดเพราะเสี่ยงบุกเข้าพื้นที่หวงห้าม"},{"c": [":tools"], "d": "ดู/จัดการเครื่องมือในตัว (ไม่ใช้ก่อกวน)", "s": "all", "r": "ดู/จัดการเครื่องมือในตัวเพื่อทำงาน ไม่ใช้ก่อกวน"},{"c": [":tp", ":bring"], "d": "ดึงผู้เล่นมาหา (ต้องมีเหตุ / ยินยอม)", "s": "all", "r": "ดึงผู้เล่นมาหาเมื่อมีเหตุจำเป็นหรือยินยอม เช่น เรียกพบหรือตรวจสอบ"},{"c": [":track all"], "d": "ดูภาพรวมทั้งเซิร์ฟ — สงวนให้กองบัญชาการเท่านั้น", "s": "hq", "r": "ใช้ประเมินสถานการณ์ภาพรวมของเซิร์ฟ จึงสงวนให้กองบัญชาการ ส่วน :track รายบุคคลยังห้ามเพราะละเมิดความเป็นส่วนตัว"},{"c": [":view", ":unview"], "d": "ดูการกระทำผู้เล่น / ยกเลิก (เฉพาะงานตรวจสอบ)", "s": "all", "r": "ดูการกระทำผู้เล่นเฉพาะงานตรวจสอบ เพื่อหาหลักฐานการกระทำผิด"}],B=[{"c": [":admins"], "d": "ดูรายชื่อแอดมิน — ใช้ตรวจสอบโครงสร้างอำนาจโดยไม่จำเป็น"},{"c": [":alert"], "d": "แจ้งเตือนทั้งเซิร์ฟโดยไม่มีเหตุ — ก่อกวน"},{"c": [":back"], "d": "ส่งกลับจุดเดิมหลังดึง — ใช้ประกอบการก่อกวนได้ง่าย"},{"c": [":ban", ":tban"], "d": "แบนโดยไม่ผ่านกระบวนการยุติธรรม แทรกแซงอำนาจสำนักงานพระธรรมนูญ — ห้ามทุกชั้นยศ รวมถึงกองบัญชาการ"},{"c": [":bighead", ":smallhead", ":flatten"], "d": "เปลี่ยนรูปกายเล่น ๆ — ไม่เหมาะกับทหาร"},{"c": [":blind", ":smoke", ":fire"], "d": "ตาบอด/ควัน/ไฟ — ก่อกวนการมองเห็น"},{"c": [":bodyswap", ":copychar"], "d": "สลับ/ก๊อปปี้ตัว — สับสนตัวตน"},{"c": [":bot", ":boombox"], "d": "บอท/บูมบ็อกซ์ — ก่อเสียงรบกวน"},{"c": [":brazil", ":fling", ":rocket"], "d": "เหวี่ยงคนออกไปไกล ก่อกวนหรือไล่คนโดยมิชอบ"},{"c": [":broadcast", ":m"], "d": "ประกาศทั้งเซิร์ฟโดยไม่มีอำนาจ"},{"c": [":bunnyhop"], "d": "กระโดดกระต่าย — ไม่สมจริง"},{"c": [":clickteleport"], "d": "วาร์ปคลิก — เลี่ยงการควบคุมพื้นที่"},{"c": [":control", ":possess"], "d": "บังคับตัวละครผู้อื่น ละเมิดสิทธิและวินัยร้ายแรง"},{"c": [":crash", ":hardcrash", ":gpucrash"], "d": "ทำให้เกมหรือเครื่องค้าง กระทบทุกคนในเซิร์ฟ"},{"c": [":disco", ":breakdance", ":dance"], "d": "เต้น/ดิสโก้ — ก่อความไม่เป็นระเบียบ"},{"c": [":disguise", ":swagify"], "d": "ปลอมตัว — ใช้หลีกเลี่ยงการระบุตัว"},{"c": [":dog", ":dogg", ":undog"], "d": "เปลี่ยนเป็นสุนัข — ลดศักดิ์ศรี ใช้ก่อกวน"},{"c": [":doll"], "d": "เสกตุ๊กตา — ของเล่น ไม่เกี่ยวกับงานราชการ"},{"c": [":esp", ":wallhack"], "d": "มองทะลุ ได้เปรียบโดยไม่ชอบ"},{"c": [":explode", ":creeper", ":bomb"], "d": "ระเบิดตัวละคร ก่อความวุ่นวายและเสียหาย"},{"c": [":f3x", ":insert", ":btools"], "d": "สร้าง/แก้แมพโดยไม่ได้รับอนุญาต"},{"c": [":ff", ":unff"], "d": "ForceField — ไม่เหมาะกับความเป็นจริงทางทหาร"},{"c": [":fly", ":flyspeed"], "d": "บินนอกภารกิจ — ได้เปรียบ ไม่สมจริง ห้ามทุกชั้นยศ"},{"c": [":freecam", ":unfreecam"], "d": "กล้องอิสระ — เลี่ยงการควบคุมพื้นที่"},{"c": [":freeze", ":thaw"], "d": "แช่แข็งผู้อื่น — จำกัดเสรีภาพโดยมิชอบ"},{"c": [":give", ":gear", ":tools"], "d": "เสกของ/อาวุธโดยไม่จำเป็นหรือให้ผู้ไม่มีสิทธิ์"},{"c": [":globalban", ":gameban"], "d": "แบนทั้งเกมโดยไม่ผ่านกระบวนการยุติธรรม — ห้ามทุกชั้นยศ ต้องผ่านสำนักงานพระธรรมนูญ"},{"c": [":god", ":ungod"], "d": "อมตะโดยไม่จำเป็น — เสียสมดุล เลี่ยงการตรวจสอบ ห้ามทุกชั้นยศ"},{"c": [":goldify", ":ghostify", ":sparkles"], "d": "เปลี่ยนผิว/ประกาย — ไม่มีประโยชน์ราชการ"},{"c": [":heal"], "d": "ฮีลเพิ่มเลือด — ห้ามใช้ ให้ใช้ :ref แทน เพราะเร็วกว่า"},{"c": [":healthlist"], "d": "ดูเลือดผู้เล่นทั้งเซิร์ฟ — ละเมิดความเป็นส่วนตัว"},{"c": [":hint", ":shout", ":notify"], "d": "ข้อความลอยทั้งเซิร์ฟโดยไม่จำเป็น"},{"c": [":infect", ":zombie", ":alien", ":morph"], "d": "แปลงร่าง — นอกบริบททหาร"},{"c": [":info", ":age"], "d": "ดูข้อมูลบัญชีผู้เล่น — ละเมิดความเป็นส่วนตัว"},{"c": [":invisible", ":incognito", ":novid"], "d": "ล่องหน / ปิดตัวตน — เลี่ยงการตรวจสอบหรือกระทำความผิด ห้ามทุกชั้นยศ รวมถึงกองบัญชาการ"},{"c": [":kick", ":jail", ":punish"], "d": "ไล่/ขัง/ลงโทษนอกกระบวนการ"},{"c": [":kill", ":loopkill", ":damage"], "d": "ฆ่า/ทำร้ายโดยไม่มีอำนาจหรือเหตุสมควร"},{"c": [":lag", ":fpslag", ":serverlag"], "d": "ทำให้เซิร์ฟแลค จงใจก่อความเสียหาย"},{"c": [":loop"], "d": "ลูปคำสั่ง — ใช้ก่อกวนซ้ำได้"},{"c": [":mod", ":unmod"], "d": "ให้หรือยึดมอดโดยไม่มีอำนาจ (สงวนเฉพาะคดีพระธรรม)"},{"c": [":mute", ":gmute", ":chatmute"], "d": "ปิดเสียงโดยไม่มีอำนาจ"},{"c": [":name", ":displayname", ":setname"], "d": "เปลี่ยนชื่อผู้อื่น — ก่อความสับสน"},{"c": [":noclip", ":clip"], "d": "ทะลุกำแพง เข้าพื้นที่หวงห้ามโดยมิชอบ"},{"c": [":particle", ":trail", ":glow", ":skydive"], "d": "เอฟเฟกต์เล่น ๆ — ไม่เกี่ยวกับภารกิจ"},{"c": [":place", ":crossserver"], "d": "ย้ายแมพ/ข้ามเซิร์ฟมั่ว"},{"c": [":profile"], "d": "ดูโปรไฟล์ผู้เล่น — ละเมิดความเป็นส่วนตัว"},{"c": [":re", ":ref"], "d": "รีตัวมั่ว — เลี่ยงการตรวจสอบหรือก่อกวนจุดเกิด"},{"c": [":respawn"], "d": "รีเกิดผู้อื่นโดยตรง — แทรกแซงการฝึก/การรบ"},{"c": [":serverinfo"], "d": "ดูข้อมูลเซิร์ฟโดยไม่มีหน้าที่ — ไม่จำเป็นต่อภารกิจทั่วไป"},{"c": [":shirt", ":pants", ":face", ":hat"], "d": "เปลี่ยนชุด/หน้าผู้อื่น — ละเมิดตัวตน"},{"c": [":shutdown", ":fullshutdown", ":globalsoftshutdown"], "d": "ปิดเซิร์ฟโดยไม่มีอำนาจ"},{"c": [":sit", ":unsit"], "d": "บังคับให้นั่ง — จำกัดเสรีภาพโดยไม่มีเหตุ"},{"c": [":size", ":scale", ":speed", ":jumppower"], "d": "ย่อขยาย/เร่งความเร็วเล่น — เสียสมดุล"},{"c": [":spin"], "d": "หมุนตัว — ไม่มีประโยชน์ต่อภารกิจ"},{"c": [":sword"], "d": "เสกดาบ — ไม่เหมาะกับความเป็นจริงทางทหาร"},{"c": [":team"], "d": "เข้าทีม/ย้ายทีมโดยไม่มีอำนาจ — แอบอ้างสังกัด"},{"c": [":to", ":tp", ":bring"], "d": "วาป/ดึงเพื่อก่อกวน ไม่ใช่ภารกิจ"},{"c": [":to [พิกัด]"], "d": "ห้ามใส่พิกัด — เจาะพื้นที่หวงห้าม/ก่อกวนได้ง่าย โทษขั้นสูง"},{"c": [":trip", ":seizure", ":shiver"], "d": "ทำให้ล้ม/ชัก/สั่น — รบกวนผู้อื่นโดยตรง"},{"c": [":watch", ":spy", ":track"], "d": "แอบดู/ติดตามโดยไม่มีเหตุแห่งการตรวจสอบ (ยกเว้น :track all เฉพาะกองบัญชาการ)"}];
+const SC={all:['ผู้มีสิทธิ์ใช้','ok'],hq:['เฉพาะกองบัญชาการ','hq'],event:['เฉพาะงานพิธี','ev'],need:['เมื่อจำเป็น','nd'],chk:['ตรวจสอบนักโกง','ck']};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+let on=true,AC;try{AC=new(window.AudioContext||window.webkitAudioContext)()}catch(e){}
+function beep(f,d,t,ty,v,w){if(!on||!AC)return;try{const s=AC.currentTime+(w||0),o=AC.createOscillator(),g=AC.createGain();o.type=ty||'sine';o.connect(g);g.connect(AC.destination);o.frequency.setValueAtTime(f,s);if(t)o.frequency.exponentialRampToValueAtTime(t,s+d);g.gain.setValueAtTime(v||.1,s);g.gain.exponentialRampToValueAtTime(.001,s+d);o.start(s);o.stop(s+d)}catch(e){}}
+function noise(d,w){if(!on||!AC)return;try{const n=AC.sampleRate*d,b=AC.createBuffer(1,n,AC.sampleRate),a=b.getChannelData(0);for(let i=0;i<n;i++)a[i]=(Math.random()*2-1)*Math.pow(1-i/n,2);const s=AC.createBufferSource(),g=AC.createGain();s.buffer=b;g.gain.value=.25;s.connect(g);g.connect(AC.destination);s.start(AC.currentTime+(w||0))}catch(e){}}
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('show'),1400)}
+function copy(t,l){const ok=()=>{toast('คัดลอก '+(l||t));beep(900,.06)};const fb=()=>{const x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy')}catch(e){}x.remove();ok()};try{navigator.clipboard.writeText(t).then(ok,fb)}catch(e){fb()}}
+let CS=null;try{CS=localStorage.getItem('cs')}catch(e){}let fav=new Set();try{if(CS==='1')fav=new Set(JSON.parse(localStorage.getItem('fav')||'[]'))}catch(e){}
+const save=()=>{try{if(CS==='1')localStorage.setItem('fav',JSON.stringify([...fav]))}catch(e){}};
+const S={a:{q:'',f:'all'},b:{q:'',f:'all'}};
+const CH={a:[['all','ทั้งหมด'],['hq','กองบัญชาการ'],['event','งานพิธี'],['need','เมื่อจำเป็น'],['chk','ตรวจสอบ'],['fav','⭐ บันทึก']],b:[['all','ทั้งหมด'],['fav','⭐ บันทึก']]};
+function lst(id){const bad=id==='b',D=bad?B:A,s=S[id],q=s.q.trim().toLowerCase();
+const r=D.filter(i=>(!q||(i.c.join(' ')+i.d).toLowerCase().includes(q))&&(s.f==='all'||(s.f==='fav'?fav.has(i.c[0]):i.s===s.f)));
+$('#'+id+'Chips').innerHTML=CH[id].map(c=>`<button class="chip${s.f===c[0]?' on':''}" data-l="${id}" data-f="${c[0]}">${c[1]}</button>`).join('');
+$('#'+id+'List').innerHTML=r.map(i=>`<div class="it"><div class="m"><span class="tg ${bad?'hi':SC[i.s][1]}">${bad?'โทษสูง':SC[i.s][0]}</span><div>${i.c.map(c=>`<button class="cd${bad?' b':''}" data-c="${c}">${c}</button>`).join('')}</div>${bad?`<p class="why wr"><b>เหตุผลที่ห้าม:</b> ${i.d}</p>`:`<p>${i.d}</p><p class="why wg"><b>ทำไมถึง OK:</b> ${i.r}</p>`}</div><button class="st${fav.has(i.c[0])?' on':''}" data-k="${i.c[0]}">★</button></div>`).join('')||'<p class="empty">ไม่พบรายการ</p>';
+$('#'+id+'Cnt').textContent='แสดง '+r.length+' จาก '+D.length+' รายการ'}
+function check(v){v=v.trim().toLowerCase().replace(/^[:!]/,'').split(/\s+/)[0];if(!v)return'';
+const n=c=>c.toLowerCase().replace(/^[:!]/,'').split(/\s+/)[0],f=D=>D.filter(i=>i.c.some(c=>n(c)===v)),a=f(A),b=f(B);
+if(!a.length&&!b.length)return`<div class="rs nf">ไม่พบ :${v} ในบัญชี<small>โปรดสอบถามกองบัญชาการก่อนใช้</small></div>`;
+return a.map(i=>`<div class="rs ok">✅ ใช้ได้ · ${SC[i.s][0]}<small>${i.d}<br>💡 ${i.r}</small></div>`).join('')+b.map(i=>`<div class="rs no">🚫 ต้องห้าม · โทษสูง<small>${i.d}</small></div>`).join('')}
+const HR=[['ข้อบังคับการใช้มอด','ตรวจคำสั่งว่าใช้ได้หรือต้องห้าม พร้อมเหตุผลทุกข้อ','ตรวจคำสั่ง','home','🔎'],['ถาม AI ได้ทุกเรื่อง','ใช้คำสั่งนี้ผิดไหม ทำไมถึงห้าม ผิดมาตราอะไร','ถาม AI','ai','🤖'],['พบโกงหรือบัค แจ้งได้ทันที','สร้างใบแจ้งเบาะแสพร้อมเลขที่และมาตราอ้างอิง','แจ้งเบาะแส','report','📝']];
+const SV=[['ai','🤖','ถาม AI','ถามเป็นภาษาธรรมดาว่าคำสั่งนี้ผิดไหม พร้อมเหตุผลและมาตรา','เพื่อไม่ต้องไล่อ่านทุกหน้า','gh'],['chk','🔎','ตรวจคำสั่ง','พิมพ์คำสั่งแล้วรู้ทันทีว่าใช้ได้หรือต้องห้าม','เพื่อลดการใช้คำสั่งผิดโดยไม่ตั้งใจ','gh'],['allowed','✅','คำสั่งที่ใช้ได้','บัญชีคำสั่งพร้อมเงื่อนไขและเหตุผลที่อนุญาต','เพื่อให้ใช้ถูกขอบเขต','oh'],['elig','🪪','ตรวจสิทธิ์ใช้มอด','ดูว่าสถานะของคุณมีสิทธิตามเกณฑ์หรือไม่','เพื่อรู้สิทธิ์ก่อนลองใช้','o'],['banned','🚫','คำสั่งต้องห้าม','รายการที่ห้ามใช้ทุกชั้นยศ โทษสูงทั้งหมด','เพื่อป้องกันการก่อกวนและเสียสมดุล','oh'],['rules','📋','ข้อบังคับหลัก','ขอบเขต สิทธิ และบทลงโทษของการใช้มอด','เพื่อให้กฎอยู่ในที่เดียว','g'],['law','⚖️','ข้อกฎหมายอ้างอิง','มาตราและระดับโทษที่ใช้ตัดสิน','เพื่อไม่ลงโทษเกินกฎหมาย','gh'],['cheat','🛡️','โกง / สคริปต์ / บัค','ประเภท กฎหมาย และขั้นตอนดำเนินการ','เพื่อแยกเรื่องโกงออกจากมอด','vh'],['report','📝','แจ้งเบาะแส','สร้างใบแจ้งพร้อมเลขที่และมาตราอ้างอิง','เพื่อให้กองบัญชาการติดตามได้','v'],['calc','🧮','คำนวณระดับโทษ','ประเมินระดับโทษเบื้องต้นจากมาตราที่เกี่ยวข้อง','เพื่อรู้ผลของการกระทำล่วงหน้า','h'],['quiz','🎓','แบบทดสอบ','สุ่ม 8 ข้อ ทบทวนว่าคำสั่งไหนใช้ได้หรือห้าม','เพื่อทบทวนก่อนใช้งานจริง','gx'],['about','💡','วัตถุประสงค์ของระบบ','อธิบายว่าเว็บนี้ทำไว้เพื่ออะไร พร้อมคำศัพท์','เพื่อให้เข้าใจภาพรวม','x']];
+$('#page-home').insertAdjacentHTML('afterbegin',`<div class="hero" id="hero">${HR.map((h,i)=>`<div class="sl${i?'':' on'}"><h3>${h[0]}</h3><p>${h[1]}</p><button data-go="${h[3]}"${h[3]==='home'?' data-fchk="1"':''}>${h[2]}</button><span class="em">${h[4]}</span></div>`).join('')}</div><div class="dots" id="hd2">${HR.map((_,i)=>`<i data-h="${i}" class="${i?'':'on'}"></i>`).join('')}</div><h1 class="big">ให้กองบัญชาการดูแลทุกเรื่องการใช้มอดของคุณ</h1><div class="chips pls">${[['all','ทั้งหมด'],['g','ผู้ใช้ทั่วไป'],['o','ผู้มีสิทธิใช้มอด'],['h','กองบัญชาการ'],['v','ตรวจสอบ / โกง-บัค'],['x','บริการอื่น ๆ']].map((c,i)=>`<button class="chip${i?'':' on'}" data-cat="${c[0]}">${c[1]}</button>`).join('')}</div><div class="trk" id="trk"></div><div class="nv"><div class="dots" id="dots"></div><span><button class="ar" data-ar="-1">‹</button><button class="ar" data-ar="1">›</button></span></div><div class="tiles"><button class="tile" data-go="allowed"><b>${A.length}</b><span>✅ คำสั่งที่ใช้ได้</span></button><button class="tile" data-go="banned"><b>${B.length}</b><span>🚫 คำสั่งต้องห้าม</span></button></div><div class="card"><h2>🔎 ตรวจคำสั่ง</h2><div class="sb"><input id="chk" type="search" placeholder="พิมพ์คำสั่ง เช่น :fly, :music, :crash" autocomplete="off"></div><div id="chkR"></div></div>`);
+
+const MAIN=['home','ai','allowed','banned','menu'];
+function go(p){document.body.classList.remove('dro');$$('.page').forEach(x=>x.classList.toggle('active',x.id==='page-'+p));const m=MAIN.includes(p);$$('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.p===(m?p:'menu')));$('#bk').style.display=m?'none':'';if(p==='quiz'&&!Q.length)qstart();scrollTo({top:0,behavior:'smooth'});beep(600,.06)}
+document.addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;
+if(t.dataset.p)go(t.dataset.p);else if(t.dataset.go)go(t.dataset.go);
+else if(t.dataset.c)copy(t.dataset.c);
+else if(t.dataset.k){const k=t.dataset.k;fav.has(k)?fav.delete(k):fav.add(k);save();toast(fav.has(k)?'บันทึก '+k:'ลบ '+k);lst('a');lst('b')}
+else if(t.dataset.f){S[t.dataset.l].f=t.dataset.f;lst(t.dataset.l);beep(700,.05)}});
+$('#aQ').oninput=e=>{S.a.q=e.target.value;lst('a')};$('#bQ').oninput=e=>{S.b.q=e.target.value;lst('b')};
+$('#chk').oninput=e=>{$('#chkR').innerHTML=check(e.target.value)};
+$('#snd').onclick=()=>{on=!on;$('#snd').textContent=on?'🔊 เสียง: เปิด':'🔇 เสียง: ปิด';beep(800,.08)};
+$('#thm').onclick=()=>{const r=document.documentElement,c=r.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');r.dataset.theme=c==='dark'?'light':'dark'};
+lst('a');lst('b');
+const LAW='เกณฑ์ผู้มีสิทธิใช้มอด: นายทหารสัญญาบัตรขึ้นไป(ร้อยตรีขึ้นไป) หรือสังกัดกรมยุทธศึกษาทหารบก/สารวัตรทหารบก/สำนักงานจเรทหารบก. ใช้คำสั่งต้องห้ามถูกดำเนินการทางกฎหมายทุกชั้นยศ. ม.๑ ห้ามตีความขยายโทษ; ม.๑ วรรค(๕) ผู้บังคับบัญชาอาศัยตำแหน่งเพิ่มโทษได้ไม่เกินกึ่งหนึ่ง; ม.๓ ระดับโทษ MIN MOD MAJ MAJ-CAP CAP; ม.๗ ระงับสิทธิ เพิกถอนอำนาจ ขึ้นบัญชีห้ามใช้ระบบถาวร; ม.๘ ผู้ร่วมกระทำผิดรับผิดตามระดับ; ม.๒๗ ความสงบในค่าย; ม.๓๓ สารวัตรทหาร/จเรทหารตรวจสอบ; ม.๓๕ ใช้อำนาจแอดมินเกินขอบเขต=MOD-MAJ เสียหายร้ายแรง=CAP; ม.๓๗ ใช้เครื่องมือโดยไม่มีอำนาจหรือนอกวัตถุประสงค์=MAJ หาประโยชน์ส่วนตน/ให้ยืมสิทธิ=CAP; ม.๓๘ วินัยทหาร; :to ใส่พิกัดโทษ MAJ-CAP; โกง/สคริปต์/บัคแยกจากมอด ใช้ ม.๑ ๓-๕ ๗ ๘ ๒๗ ๓๓ ๓๘ (ม.๓๕/๓๗ ใช้กับคำสั่งมอดเท่านั้น)';
+const CTX=()=>'คุณคือผู้ช่วยตอบข้อบังคับการใช้มอดของแมพจำลองทหารไทย ตอบภาษาไทย กระชับไม่เกิน 6 บรรทัด ใช้เฉพาะข้อมูลด้านล่าง ห้ามแต่งมาตราหรือโทษเพิ่ม ถ้าไม่มีข้อมูลให้บอกว่าไม่พบและแนะนำสอบถามกองบัญชาการ ตอบเป็น 4 หัวข้อสั้น ๆ: ๑) สรุป ✅ใช้ได้ / ⚠️มีเงื่อนไข / 🚫ผิดหรือต้องห้าม ๒) วัตถุประสงค์และเหตุผล ๓) มาตราและระดับโทษที่เกี่ยวข้อง (เฉพาะที่มีในข้อมูล) ๔) ทางเลือกที่ใช้ได้แทน (ถ้ามี) ถ้าคำถามกำกวมให้ถามกลับหนึ่งข้อ\n\nกฎหมาย: '+LAW+'\n\nคำสั่งที่ใช้ได้:\n'+A.map(i=>i.c.join(',')+' ['+SC[i.s][0]+'] '+i.d+' | เหตุผล: '+i.r).join('\n')+'\n\nคำสั่งต้องห้าม (โทษสูงทั้งหมด):\n'+B.map(i=>i.c.join(',')+' '+i.d).join('\n');
+const HIS=[];let busy=false;
+function bub(c,h){const d=document.createElement('div');d.className='bub '+c;if(h)d.innerHTML=h;$('#msgs').appendChild(d);d.scrollIntoView({block:'end',behavior:'smooth'});return d}
+
+function localAI(q){
+  const raw=q.trim(), ql=raw.toLowerCase();
+  const cmds=(raw.match(/[:!][A-Za-z]+(?: (?:me|all))?/g)||[]);
+  const lines=[];
+  // 1) specific commands
+  if(cmds.length){
+    cmds.slice(0,5).forEach(c=>{
+      const hit=check(c);
+      if(hit){lines.push(hit);return}
+      // search A/B
+      const key=c.toLowerCase();
+      let found=null, banned=false;
+      for(const i of A){if(i.c.some(x=>x.toLowerCase()===key||x.toLowerCase().startsWith(key))){found=i;break}}
+      if(!found){for(const i of B){if(i.c.some(x=>x.toLowerCase()===key||x.toLowerCase().startsWith(key))){found=i;banned=true;break}}}
+      if(found){
+        if(banned){
+          lines.push(`<div class="rs no">🚫 <b>${found.c.join(' / ')}</b> — ต้องห้าม<small>${found.d}</small><small>ฐาน: ม.๓๕ / ม.๓๗ · โทษ MAJ–CAP ตามพฤติการณ์</small></div>`);
+        }else{
+          const sc=SC[found.s]||SC.all;
+          lines.push(`<div class="rs ok">✅ <b>${found.c.join(' / ')}</b> — ${sc[0]}<small>${found.d}</small><small>เหตุผล: ${found.r||'-'}</small></div>`);
+        }
+      }else{
+        lines.push(`<div class="rs nf">❓ ไม่พบ <b>${c}</b> ในบัญชีคำสั่งของระบบ<small>ลองพิมพ์ชื่อคำสั่งให้ตรง เช่น :fly :give me :music</small></div>`);
+      }
+    });
+  }
+  // 2) topic answers
+  const topics=[
+    {k:/(ใคร|สิทธิ|มีสิทธิ|ใช้มอดได้|สัญญาบัตร|ร้อยตรี)/, a:'ผู้มีสิทธิใช้มอดโดยหลักคือ <b>นายทหารชั้นสัญญาบัตรขึ้นไป</b> หรือผู้สังกัดหน่วยที่กฎกำหนด (เช่น กรมยุทธศึกษา / สารวัตร / จเร ตามเงื่อนไข)<br>ต่ำกว่าเกณฑ์ — <b>ไม่มีสิทธิใช้มอด</b><br>แม้มีสิทธิ ยังห้ามคำสั่งหมวดต้องห้ามทุกชั้นยศ'},
+    {k:/(music|เพลง|พิธี)/, a:'<b>:music</b> ใช้ได้เฉพาะ <b>กองบัญชาการ</b> และเฉพาะ <b>งานพิธี</b> เท่านั้น<br>ห้ามเปิดในเวลาปกติ เพราะรบกวนภารกิจ'},
+    {k:/(ban|แบน|tban|globalban|gameban)/, a:'คำสั่งแบนทุกประเภท (<b>:ban :tban :globalban :gameban</b>) <span style="color:#dc2626">ต้องห้ามทุกชั้นยศ รวมถึงกองบัญชาการ</span><br>การแบนต้องผ่านกระบวนการของ <b>สำนักงานพระธรรมนูญ</b> เท่านั้น (ม.๓๕ / ม.๓๗)'},
+    {k:/(fly|บิน|god|อมตะ|invisible|ล่องหน|novid|incognito)/, a:'<b>:fly :god :invisible :novid :incognito</b> อยู่ในหมวด <span style="color:#dc2626">ต้องห้าม</span> ทุกชั้นยศ<br>เหตุผล: ได้เปรียบ / ไม่สมจริง / เลี่ยงการตรวจสอบ — อ้างอิง ม.๓๕ ม.๓๗'},
+    {k:/(โทษ|ระดับ|MAJ|CAP|MIN|MOD)/, a:'ระดับโทษตามกฎหมาย: <b>MIN → MOD → MAJ → MAJ-CAP → CAP</b><br>• ใช้เครื่องมือแอดมินโดยไม่มีอำนาจ / นอกวัตถุประสงค์ → ม.๓๗ โทษ <b>MAJ</b><br>• แสวงหาประโยชน์ / ก่อเสียหายร้ายแรง → <b>CAP</b><br>• ผู้บังคับบัญชาอาศัยตำแหน่ง → ม.๑ วรรค (๕) เพิ่มโทษได้ไม่เกินกึ่งหนึ่ง'},
+    {k:/(พักราชการ)/, a:'<b>พักราชการ</b> = สั่งให้หยุดปฏิบัติหน้าที่และใช้อำนาจชั่วคราว (ม.๖)<br>ยังไม่ถูกปลดหรือแบน เมื่อครบกำหนดกลับเข้าปฏิบัติหน้าที่ได้ เว้นแต่มีคำสั่งเพิ่ม'},
+    {k:/(ม\.?\s*๓๕|มาตรา\s*๓๕|ม\.?\s*35)/, a:'<b>มาตรา ๓๕</b> การใช้อำนาจผู้มีสิทธิบริหารระบบ (คำสั่งแอดมิน)<br>ต้องใช้ในขอบเขต ยึดหลักนิติรัฐ ความจำเป็น ได้สัดส่วน<br>เกินขอบเขต / โดยมิชอบ → <b>MOD–MAJ</b> · เสียหายร้ายแรง → <b>CAP</b>'},
+    {k:/(ม\.?\s*๓๗|มาตรา\s*๓๗|ม\.?\s*37)/, a:'<b>มาตรา ๓๗</b> การใช้เครื่องมือบริหารระบบ<br>• ไม่มีอำนาจ / นอกวัตถุประสงค์ → <b>MAJ</b><br>• แสวงหาประโยชน์ / ได้เปรียบ / ก่อเสียหาย → <b>CAP</b><br>• โอน มอบ ให้ยืมสิทธิ → <b>CAP</b>'},
+    {k:/(ต้องห้าม|ห้ามใช้|banned)/, a:'คำสั่งต้องห้ามคือคำสั่งที่ไม่มีประโยชน์ต่อภารกิจ ก่อกวน ได้เปรียบไม่ชอบ ละเมิดสิทธิ หรือไม่สมจริง<br>เปิดแท็บ <b>คำสั่งต้องห้าม</b> เพื่อดูรายการเรียง A–Z พร้อมเหตุผล<br>ฝ่าฝืน — ดำเนินการตาม ม.๓๕ / ม.๓๗ / ม.๓๘ ไม่ว่าชั้นยศใด'},
+    {k:/(ใช้ได้|allowed|อนุญาต)/, a:'คำสั่งที่ใช้ได้ต้องอยู่ในบัญชีและใช้ตามเงื่อนไข (ภารกิจราชการ / ตรวจสอบ / งานพิธี)<br>เปิดแท็บ <b>คำสั่งที่ใช้ได้</b> มีช่องค้นหาและกรองตัวอักษร'},
+    {k:/(สวัสดี|hello|ช่วย|help|ทำอะไรได้)/, a:'ถามได้ เช่น<br>• <code>:fly</code> ใช้ได้ไหม<br>• ใครมีสิทธิใช้มอด<br>• :music ใช้เมื่อไหร่<br>• โทษของคำสั่งต้องห้าม<br>• พักราชการคืออะไร<br>ระบบตอบจากบัญชีคำสั่งและมาตรากฎหมายในเว็บนี้'},
+  ];
+  for(const t of topics){
+    if(t.k.test(ql) || t.k.test(raw)){
+      lines.push('<div class="rs ok">'+t.a+'</div>');
+      break;
+    }
+  }
+  if(!lines.length){
+    // fuzzy search commands mentioned as words
+    const words=ql.split(/[\s,]+/).filter(w=>w.length>2);
+    let any=false;
+    for(const i of [...A,...B]){
+      const blob=(i.c.join(' ')+' '+(i.d||'')+' '+(i.r||'')).toLowerCase();
+      if(words.some(w=>blob.includes(w) && w.length>3)){
+        const banned=B.includes(i)||B.some(b=>b.c[0]===i.c[0]);
+        const isBan=B.some(b=>b.c.some(c=>i.c.includes(c)));
+        lines.push(`<div class="rs ${isBan?'no':'ok'}"><b>${i.c.join(' / ')}</b> — ${isBan?'ต้องห้าม':'ใช้ได้ภายใต้เงื่อนไข'}<small>${i.d||i.r||''}</small></div>`);
+        any=true;
+        if(lines.length>=4)break;
+      }
+    }
+    if(!any){
+      lines.push(`<div class="rs nf">ยังไม่เข้าใจคำถามพอ<br><small>ลองถามแบบนี้: «:god ผิดไหม» «ใครใช้มอดได้» «โทษม.๓๗» «:music ใช้เมื่อไหร่»</small></div>`);
+    }
+  }
+  return lines.join('')||'<div class="rs nf">ไม่มีข้อมูล</div>';
+}
+async function ask(q){
+  q=q.trim();if(!q||busy)return;busy=true;$('#aiQ').value='';$('#sg').innerHTML='';bub('u').textContent=q;
+  const cm=(q.match(/[:!][A-Za-z]+(?: (?:me|all))?/g)||[]).slice(0,3).map(check).join('');
+  if(cm)bub('a','<small>🔎 ตรวจเบื้องต้นจากบัญชี</small>'+cm);
+  const o=bub('a');o.innerHTML='<small>⏳ กำลังวิเคราะห์จากข้อบังคับ…</small>';
+  await new Promise(r=>setTimeout(r,280+Math.random()*220));
+  try{
+    const ans=localAI(q);
+    o.innerHTML='<small>📋 ผู้ช่วยข้อบังคับ (ระบบในเครื่อง)</small>'+ans;
+    HIS.push('ผู้ใช้: '+q,'ผู้ช่วย: '+o.textContent.slice(0,200));
+    fu(q);
+  }catch(e){
+    o.textContent='เกิดข้อผิดพลาดในการตอบ — ใช้ช่องตรวจคำสั่งที่หน้าแรกแทนได้';
+  }
+  busy=false;
+}
+
+$('#aiS').onclick=()=>ask($('#aiQ').value);$('#aiQ').onkeydown=e=>{if(e.key==='Enter')ask(e.target.value)};
+document.addEventListener('click',e=>{const q=e.target.closest('[data-q]');if(q)ask(q.dataset.q)});
+const EG={o:['ok','✅ มีสิทธิใช้มอด','ใช้คำสั่งหมวด "ใช้ได้" ตามเงื่อนไข ส่วนคำสั่งสงวนเฉพาะกองบัญชาการยังใช้ไม่ได้'],x:['ok','✅ มีสิทธิใช้มอด','สังกัดหน่วยที่กฎอนุญาต ใช้คำสั่งหมวด "ใช้ได้" ตามเงื่อนไข'],n:['no','🚫 ไม่มีสิทธิใช้มอด','ต้องเป็นนายทหารชั้นสัญญาบัตรขึ้นไป หรือสังกัดหน่วยที่กฎกำหนด'],h:['ok','✅ มีสิทธิเต็ม','รวมคำสั่งสงวนเฉพาะกองบัญชาการ แต่ยังห้าม :ban :tban :globalban :gameban :invisible :fly :god']};
+$('#eg').onchange=e=>{const g=EG[e.target.value];$('#egr').innerHTML=g?`<div class="rs ${g[0]}">${g[1]}<small>${g[2]}</small></div>`:'';beep(700,.06)};
+let TK='';
+$('#rp').onclick=()=>{const g=i=>$('#'+i).value.trim(),T={c:['โปรแกรมโกง','ม.๑ ม.๓–๕ ม.๗ ม.๘ ม.๓๓'],s:['สคริปต์','ม.๑ ม.๓–๕ ม.๗ ม.๘ ม.๓๓'],b:['บัค / ช่องโหว่','ม.๑ ม.๓๓ ม.๓๘'],m:['ใช้คำสั่งมอดผิดระเบียบ','ม.๓๕ ม.๓๗ ม.๓๘']}[g('rt')];
+if(!g('rn')||!g('rd')){toast('กรอกชื่อและรายละเอียดก่อน');return}
+TK='ใบแจ้งเบาะแส เลขที่ RPT-'+Date.now().toString(36).toUpperCase()+'\nวันที่: '+new Date().toLocaleDateString('th-TH',{dateStyle:'long'})+'\nประเภท: '+T[0]+'\nผู้ถูกแจ้ง: '+g('rn')+'\nเวลา/สถานที่: '+(g('rw')||'-')+'\nรายละเอียด: '+g('rd')+'\nผู้แจ้ง: '+(g('rr')||'-')+'\nมาตราที่เกี่ยวข้อง: '+T[1]+'\nส่งต่อ: กองบัญชาการ / กรมสารวัตรทหาร';
+$('#tk').textContent=TK;$('#tkw').style.display='';beep(880,.1)};
+$('#tkc').onclick=()=>copy(TK,'ใบแจ้งเบาะแส');
+let Q=[],qi=0,qs=0;
+function qstart(){const P=[...A.filter(i=>!B.some(b=>b.c[0]===i.c[0])).map(i=>({c:i.c[0],a:i.s==='all'?0:1,r:i.r})),...B.filter(b=>!A.some(i=>i.c[0]===b.c[0])).map(b=>({c:b.c[0],a:2,r:b.d}))];Q=P.sort(()=>Math.random()-.5).slice(0,8);qi=0;qs=0;qn()}
+function qn(){const e=$('#qb');if(qi>=Q.length){e.innerHTML=`<div class="card"><h2>${qs>=7?'🏅 ผ่านด้วยเกียรติ':qs>=5?'✅ ผ่านการทดสอบ':'📚 ควรทบทวนข้อบังคับอีกครั้ง'}</h2><p>คะแนน ${qs} / ${Q.length}</p><button class="pbtn" id="qr">ทำใหม่</button></div>`;$('#qr').onclick=qstart;beep(qs>=5?1047:220,.4);return}
+const q=Q[qi];e.innerHTML=`<div class="card"><p class="note">ข้อ ${qi+1} / ${Q.length}</p><h2>คำสั่ง ${q.c} ใช้ได้หรือไม่?</h2>${['✅ ใช้ได้ปกติ','⚠️ มีเงื่อนไข / สงวนเฉพาะ','🚫 ต้องห้าม'].map((t,i)=>`<button class="row" data-qa="${i}"><b>${t}</b></button>`).join('')}<div id="qf"></div></div>`}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-qa]');if(!b||b.dataset.done)return;const q=Q[qi],ok=+b.dataset.qa===q.a;if(ok)qs++;$$('[data-qa]').forEach(x=>x.dataset.done=1);$('#qf').innerHTML=`<div class="rs ${ok?'ok':'no'}">${ok?'✅ ถูกต้อง':'❌ ยังไม่ถูก'}<small>${q.r}</small></div><button class="pbtn" id="qx">${qi+1<Q.length?'ข้อต่อไป':'ดูผล'}</button>`;$('#qx').onclick=()=>{qi++;qn()};beep(ok?880:200,.15)});
+const LV=['MIN','MOD','MAJ','MAJ-CAP','CAP'],CA=[[2,2,'ม.๓๗','ใช้โดยไม่มีอำนาจหรือนอกวัตถุประสงค์'],[1,2,'ม.๓๕','ใช้อำนาจเกินขอบเขต / โดยมิชอบ'],[4,4,'ม.๓๗','ใช้แสวงหาประโยชน์ส่วนตน สร้างความได้เปรียบ หรือก่อความเสียหาย'],[4,4,'ม.๓๗','โอน มอบ ให้ยืมสิทธิใช้เครื่องมือ'],[4,4,'ม.๓๕','ก่อความเสียหายร้ายแรง กระทบบังคับบัญชา หรือละเมิดสิทธิขั้นพื้นฐาน'],[2,4,'ข้อบังคับข้อ ๕','ใช้ :to โดยใส่พิกัด']];
+$('#cg').onclick=()=>{const c=CA[+$('#ca').value],lo=c[0],hi=c[1];
+$('#cr').innerHTML=`<div class="gauge">${LV.map((n,i)=>`<span class="gv${i>=lo&&i<=hi?' on g'+i:''}">${n}</span>`).join('')}</div><div class="rs ${hi>=3?'no':'nf'}">ระดับโทษเบื้องต้น: ${lo===hi?LV[lo]:LV[lo]+' ถึง '+LV[hi]}<small>ฐาน: ${c[2]} — ${c[3]}</small></div><ul>${$('#cb').value==='1'?'<li>ผู้บังคับบัญชาอาศัยตำแหน่ง: ศาลอาจเพิ่มโทษได้ไม่เกินกึ่งหนึ่ง (ม.๑ วรรค (๕))</li>':''}${$('#cc').value==='1'?'<li>ผู้ใช้ / ผู้สนับสนุน / ผู้สมคบ: รับผิดตามระดับการมีส่วนร่วม (ม.๘)</li>':''}</ul><p class="note">เป็นการประเมินเบื้องต้นจากมาตราในหน้ากฎหมาย อัตราปรับและจำคุกตาม ม.๔–๕ ไม่ได้ระบุไว้ในเว็บนี้ ผลสุดท้ายขึ้นกับสำนักงานพระธรรมนูญหรือศาล</p>`;beep(c[1]>=3?220:600,.2)};
+$('#bk').onclick=()=>go('menu');
+function svr(c){const l=SV.filter(s=>c==='all'||s[5].includes(c));$('#trk').innerHTML=l.map(s=>`<button class="sc" data-go="${s[0]==='chk'?'home':s[0]}"${s[0]==='chk'?' data-fchk="1"':''}><div class="im">${s[1]}</div><div class="tx"><b>${s[2]}</b><p>${s[3]}</p><em>🎯 ${s[4]}</em></div></button>`).join('');$('#dots').innerHTML=l.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('');$('#trk').scrollTo(0,0)}
+svr('all');
+$('#trk').onscroll=()=>{const k=$('#trk'),w=k.firstElementChild?k.firstElementChild.offsetWidth+14:1,i=Math.round(k.scrollLeft/w);$$('#dots i').forEach((d,j)=>d.classList.toggle('on',j===i))};
+let hi=0;const hs=n=>{hi=n;$$('#hero .sl').forEach((s,i)=>s.classList.toggle('on',i===n));$$('#hd2 i').forEach((d,i)=>d.classList.toggle('on',i===n))};
+setInterval(()=>hs((hi+1)%HR.length),5000);
+document.addEventListener('click',e=>{const t=e.target;let x;
+if(x=t.closest('[data-h]'))hs(+x.dataset.h);
+else if(x=t.closest('[data-cat]')){$$('[data-cat]').forEach(y=>y.classList.toggle('on',y===x));svr(x.dataset.cat);beep(700,.05)}
+else if(x=t.closest('[data-ar]')){const k=$('#trk');k.scrollBy({left:+x.dataset.ar*(k.firstElementChild?k.firstElementChild.offsetWidth+14:300),behavior:'smooth'})}
+else if(x=t.closest('[data-ins]')){const el=$('#aiQ');el.value=el.value.replace(/[:!][A-Za-z]*$/,x.dataset.ins)+' ';el.focus();el.oninput({target:el})}
+if(t.closest('[data-fchk]'))setTimeout(()=>$('#chk').focus(),350)});
+const PUR={ai:'ถามเป็นภาษาธรรมดาแล้วได้คำตอบพร้อมเหตุผลและมาตรา ไม่ต้องไล่อ่านทุกหน้า',allowed:'ให้ผู้มีสิทธิรู้ว่าคำสั่งใดใช้ได้ ใช้เมื่อไร และเพราะอะไร จะได้ใช้ถูกขอบเขต',banned:'ป้องกันการใช้คำสั่งที่ก่อกวน เสียสมดุล หรือเลี่ยงการตรวจสอบ และให้รู้ล่วงหน้าว่าเสี่ยงโทษสูง',rules:'กำหนดขอบเขต สิทธิ และบทลงโทษของการใช้มอดไว้ในที่เดียว',law:'ให้ทุกบทลงโทษมีมาตราอ้างอิง และไม่ลงโทษเกินกฎหมาย (ม.๑)',cheat:'แยกเรื่องโกง สคริปต์ และบัคออกจากคำสั่งมอด พร้อมขั้นตอนดำเนินการ',report:'ให้ผู้พบเหตุแจ้งอย่างเป็นระบบ มีเลขที่และมาตราอ้างอิง กองบัญชาการติดตามได้',quiz:'ทบทวนความเข้าใจก่อนใช้งานจริง ลดการใช้คำสั่งผิดโดยไม่ตั้งใจ',elig:'ตรวจว่าคุณมีสิทธิใช้มอดตามเกณฑ์หรือไม่ ก่อนลองใช้คำสั่ง',calc:'ประเมินระดับโทษเบื้องต้นจากมาตราที่เกี่ยวข้อง ให้รู้ผลของการกระทำล่วงหน้า'};
+Object.keys(PUR).forEach(k=>{const p=$('#page-'+k);if(p)p.insertAdjacentHTML('afterbegin','<div class="purpose"><b>🎯 วัตถุประสงค์</b>'+PUR[k]+'</div>')});
+const QS=[['คำสั่ง',['ผมใช้ :fly ผิดไหม','ทำไมห้ามใช้ :ban แม้เป็นกองบัญชาการ',':music ใช้ได้เมื่อไหร่','ใช้ :heal ผิดไหม ควรใช้อะไรแทน']],['กฎหมาย',['ใช้คำสั่งต้องห้ามโดนโทษระดับไหน','ผู้บังคับบัญชาทำผิดโทษหนักขึ้นไหม','ม.๓๕ กับ ม.๓๗ ต่างกันอย่างไร']],['โกง / บัค',['ใช้สคริปต์โกงผิดมาตราอะไร','พบบัคควรทำอย่างไร','แจกสคริปต์ให้คนอื่นผิดไหม']],['สิทธิ',['ใครมีสิทธิใช้มอดบ้าง','ต่ำกว่าร้อยตรีใช้มอดได้ไหม']]];
+$('#qs').innerHTML=QS.map(g=>`<div class="ql">${g[0]}</div><div class="chips">${g[1].map(q=>`<button class="chip" data-q="${q}">${q}</button>`).join('')}</div>`).join('');
+const CMDS=[...new Set([...A,...B].flatMap(i=>i.c.map(c=>c.split(' ')[0])))];
+$('#aiQ').oninput=e=>{const v=e.target.value,m=v.match(/[:!][A-Za-z]*$/);let h='';
+if(m&&m[0].length>1)h=CMDS.filter(c=>c.toLowerCase().startsWith(m[0].toLowerCase())).slice(0,6).map(c=>`<button class="chip" data-ins="${c}">${c}</button>`).join('');
+else{const f=(v.match(/[:!][A-Za-z]+/)||[])[0];if(f&&CMDS.includes(f))h=[`ใช้ ${f} ผิดไหม`,`เหตุผลของ ${f} คืออะไร`,`${f} มีวัตถุประสงค์เพื่ออะไร`].map(q=>`<button class="chip" data-q="${q}">${q}</button>`).join('')}
+$('#sg').innerHTML=h};
+function fu(q){const f=(q.match(/[:!][A-Za-z]+/)||[])[0],l=f?[`${f} มีวัตถุประสงค์เพื่ออะไร`,`ถ้าใช้ ${f} ผิดจะโดนโทษระดับไหน`,`มีคำสั่งอื่นใช้แทน ${f} ได้ไหม`]:['สรุปเป็นข้อ ๆ ให้หน่อย','ยกตัวอย่างสถานการณ์จริง','มีมาตราอะไรเกี่ยวข้องอีก'];bub('a','<small>ถามต่อ</small><div class="chips" style="flex-wrap:wrap">'+l.map(x=>`<button class="chip" data-q="${x}">${x}</button>`).join('')+'</div>')}
+$('#aiC').onclick=()=>{HIS.length=0;$('#msgs').innerHTML='<div class="bub a">เริ่มการสนทนาใหม่แล้วครับ</div>'};
+const ckShow=()=>{if(!CS)$('#ck').classList.add('show')};
+$('#cky').onclick=()=>{CS='1';try{localStorage.setItem('cs','1')}catch(e){}save();$('#ck').classList.remove('show');toast('บันทึกการตั้งค่าแล้ว')};
+$('#ckn').onclick=()=>{CS='0';try{localStorage.setItem('cs','0')}catch(e){}$('#ck').classList.remove('show')};
+$('#skip').onclick=()=>{try{AC&&AC.resume()}catch(e){}$('#splash').classList.add('hide');beep(700,.1);setTimeout(()=>{cancelAnimationFrame(raf);ckShow()},700)};
+$('#mn').onclick=()=>document.body.classList.add('dro');$('#scrim').onclick=$('#dx').onclick=()=>document.body.classList.remove('dro');
+$('#sr').onclick=()=>{go('home');setTimeout(()=>$('#chk').focus(),350)};
+const FS=['16px','18px','20px'];let fi=0;$('#fs').onclick=()=>{fi=(fi+1)%3;document.documentElement.style.fontSize=FS[fi];toast('ขนาดตัวอักษร '+FS[fi])};
+$('#fv').onclick=()=>{S.a.f='fav';lst('a');go('allowed')};
+const cv=$('#fx'),cx=cv.getContext('2d');let W,H,raf;const ps=[];
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+for(let i=0;i<70;i++)ps.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2+.6,v:Math.random()*.7+.25,a:Math.random()});
+(function dr(){cx.clearRect(0,0,W,H);ps.forEach(q=>{q.y-=q.v;if(q.y<-5){q.y=H+5;q.x=Math.random()*W}cx.fillStyle='rgba(255,'+(150+q.a*90|0)+',150,'+(.25+q.a*.5)+')';cx.beginPath();cx.arc(q.x,q.y,q.r,0,7);cx.fill()});raf=requestAnimationFrame(dr)})();
+const MS=['กำลังเชื่อมต่อระบบ…','ตรวจสอบสิทธิ์ผู้ใช้…','โหลดบัญชีคำสั่งที่ใช้ได้…','โหลดบัญชีคำสั่งต้องห้าม…','อ้างอิงมาตรากฎหมาย…','ระบบพร้อมใช้งาน'];
+$('#start').onclick=()=>{try{AC&&AC.resume()}catch(e){}$('#start').remove();$('#splash').classList.add('run');
+beep(120,.9,900,'sawtooth',.06);beep(240,.9,1200,'sine',.06);
+let p=0,k=-1;const iv=setInterval(()=>{p=Math.min(100,p+Math.random()*3+1.5);$('#rgc').style.strokeDashoffset=465*(1-p/100);$('#pc').textContent=(p|0)+'%';const m=Math.min(4,p/20|0);if(m!==k){k=m;$$('.stp li').forEach((l,i)=>l.classList.toggle('done',i<m));$('#msg').textContent=MS[m];beep(500+m*120,.09,0,'square',.04)}
+if(p>=100){clearInterval(iv);$$('.stp li').forEach(l=>l.classList.add('done'));$('#msg').textContent=MS[5];[660,880,1320].forEach((f,i)=>beep(f,.35,0,'sine',.12,i*.12));$('#enter').classList.add('show')}},80)};
+$('#enter').onclick=()=>{try{AC&&AC.resume()}catch(e){}$('#enter').disabled=true;$('#stamp').classList.add('slam');
+setTimeout(()=>{beep(95,.3,28,'sine',.45);beep(190,.15,70,'triangle',.25);noise(.12);$('#flash').classList.add('go');$('#splash').classList.add('shake');[523,659,784,1047].forEach((f,i)=>beep(f,.6,0,'triangle',.1,.25+i*.09))},330);
+setTimeout(()=>{$('#splash').classList.add('hide');setTimeout(()=>{cancelAnimationFrame(raf);ckShow()},700)},1250)};
+</script>
+</body>
+</html>
